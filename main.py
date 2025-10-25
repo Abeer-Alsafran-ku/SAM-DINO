@@ -514,12 +514,24 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--images", type=Path, required=True, help="Directory containing images")
     parser.add_argument("--config", type=Path, required=True, help="GroundingDINO config file")
     parser.add_argument("--checkpoint", type=Path, help="GroundingDINO checkpoint for initialization")
-    parser.add_argument("--sam-checkpoint", type=Path, help="SAM checkpoint for joint fine-tuning")
     parser.add_argument(
-        "--sam-model",
+        "--sam-checkpoint",
+        type=Path,
+        help="SAM checkpoint for joint fine-tuning",
+    )
+    parser.add_argument(
+        "--sam-backbone",
+        "--sam-model-type",
+        dest="sam_backbone",
         type=str,
         default="vit_h",
         help="SAM backbone to load (e.g. vit_h, vit_l, vit_b)",
+    )
+    parser.add_argument(
+        "--sam-model",
+        dest="sam_model_legacy",
+        type=str,
+        help="Deprecated flag kept for backwards compatibility. Use `--sam-backbone` or `--sam-checkpoint` instead.",
     )
     parser.add_argument("--output", type=Path, default=Path("./checkpoints"), help="Directory to store checkpoints")
     parser.add_argument("--epochs", type=int, default=100)
@@ -529,7 +541,29 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--finetune-sam", action="store_true")
     parser.add_argument("--return-masks", action="store_true")
     parser.add_argument("--image-size", type=int, default=800, help="Resize images to this square resolution")
-    return parser.parse_args()
+    args = parser.parse_args()
+
+    if getattr(args, "sam_model_legacy", None) is not None:
+        legacy_value = args.sam_model_legacy
+        legacy_path = Path(legacy_value).expanduser()
+        if args.sam_checkpoint is None and (legacy_path.suffix in {".pth", ".pt"} or legacy_path.exists()):
+            warnings.warn(
+                "`--sam-model` is deprecated for providing checkpoint paths. "
+                "Use `--sam-checkpoint` instead.",
+                stacklevel=2,
+            )
+            args.sam_checkpoint = legacy_path
+        else:
+            warnings.warn(
+                "`--sam-model` is deprecated for selecting the SAM backbone. "
+                "Use `--sam-backbone` (or `--sam-model-type`) instead.",
+                stacklevel=2,
+            )
+            args.sam_backbone = legacy_value
+
+    args.sam_model_type = args.sam_backbone
+
+    return args
 
 
 def main():
@@ -540,7 +574,7 @@ def main():
         groundingdino_config=args.config,
         groundingdino_checkpoint=args.checkpoint,
         sam_checkpoint=args.sam_checkpoint,
-        sam_model_type=args.sam_model,
+        sam_model_type=args.sam_model_type,
         output_dir=args.output,
     )
 
