@@ -47,7 +47,7 @@ python main.py \
   --config /path/to/groundingdino/config.py \
   --checkpoint /path/to/groundingdino_checkpoint.pth \
   --sam-checkpoint /path/to/sam_checkpoint.pth \
-  --sam-model vit_h \
+  --sam-backbone vit_h \
   --return-masks \
   --finetune-sam \
   --epochs 50 \
@@ -62,7 +62,9 @@ python main.py \
   supervision. Required if you plan to fine-tune SAM via `--finetune-sam`.
 * `--finetune-sam`: unfreezes the specified SAM backbone and optimises it using
   a combined binary cross-entropy + Dice loss on the provided masks.
-* `--sam-model`: selects the SAM backbone registered in `segment_anything`.
+* `--sam-backbone`: selects the SAM backbone registered in `segment_anything`.
+* `--sam-model`: deprecated compatibility flag. When provided with a path it is
+  treated like `--sam-checkpoint`; otherwise it maps to `--sam-backbone`.
 * `--image-size`: the resolution to which each image (and its annotations) will
   be resized before being fed to Grounding DINO and SAM.
 
