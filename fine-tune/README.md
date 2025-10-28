@@ -7,7 +7,7 @@ by introducing the capability to train the model with image-to-text grounding. T
 
 ## Features:
 
-- **Fine-tuning DINO**: This extension works allows you to fine-tune DINO on your custom dataset.
+- **Fine-tuning DINO**: This extension works allows you to fine-tune DINO on your custom dataset. [gitee](https://gitee.com/techwolf/Grounding-Dino-FineTuning/blob/main/train.py#)
 - **Bounding Box Regression**: Uses Generalized IoU and Smooth L1 loss for improved bounding box prediction.
 - **Position-aware Logit Losses**: The model not only learns to detect objects but also their positions in the captions.
 - **NMS**: We also implemented phrase based NMS to remove redundant boxes of same objects
