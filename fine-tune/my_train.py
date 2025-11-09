@@ -102,7 +102,7 @@ def read_my_dt(json_path):
         
         img_name =os.path.join("/home/abeer/roboflow/train", str(data['annotations'][i]['image_id']))
         
-        ann_Dict[img_name]['boxex'] = int(data['annotations'][i]['bbox'])
+        ann_Dict[img_name]['boxex'].append(data['annotations'][i]['bbox'])
 
         ann_Dict[img_name]['captions'].append(data['annotations'][i]['category_id'])
 
@@ -159,5 +159,6 @@ def train(model, ann_file, epochs=1, save_path='weights/model_weights',save_epoc
 
 if __name__=="__main__":
     #train(model=model, ann_file=ann_file, epochs=2000, save_path='weights/model_weights')
-    read_my_dt('/home/abeer/roboflow/train/_annotations.coco.json')
+    read_my_dt('_annotations.coco.json')
+    #read_my_dt('/home/abeer/roboflow/train/_annotations.coco.json')
 
