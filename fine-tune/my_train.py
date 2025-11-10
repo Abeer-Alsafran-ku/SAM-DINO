@@ -8,11 +8,11 @@ from collections import defaultdict
 import torch.optim as optim
 import json
 # Model
-#model = load_model("groundingdino/config/GroundingDINO_SwinT_OGC.py", "weights/groundingdino_swint_ogc.pth")
+model = load_model("groundingdino/config/GroundingDINO_SwinT_OGC.py", "weights/groundingdino_swint_ogc.pth")
 
 # Dataset paths
-#images_files=sorted(os.listdir("multimodal-data/images"))
-#ann_file="multimodal-data/annotation/annotation.csv"
+images_files=sorted(os.listdir("/home/abeer/roboflow/train"))
+ann_file="/home/abeer/roboflow/train/_annotations.coco.json"
 
 def draw_box_with_label(image, output_path, coordinates, label, color=(0, 0, 255), thickness=2, font_scale=0.5):
     """
@@ -99,14 +99,18 @@ def read_my_dt(json_path):
     data = json.loads(file_contents)
     
     for i in range (4380):
+       
+        img = data['images'][i]['file_name']
         
-        img_name =os.path.join("/home/abeer/roboflow/train", str(data['annotations'][i]['image_id']))
+        img_name =os.path.join("/home/abeer/roboflow/train",img )
         
         ann_Dict[img_name]['boxex'].append(data['annotations'][i]['bbox'])
 
         ann_Dict[img_name]['captions'].append(data['annotations'][i]['category_id'])
 
-    print(ann_Dict)
+    #print(ann_Dict)
+
+    return ann_Dict
 
             
 
@@ -114,7 +118,7 @@ def read_my_dt(json_path):
 
 def train(model, ann_file, epochs=1, save_path='weights/model_weights',save_epoch=50):
     # Read Dataset
-    ann_Dict = read_dataset(ann_file)
+    ann_Dict = read_my_dt(ann_file)
     
     # Add optimizer
     optimizer = optim.Adam(model.parameters(), lr=1e-5)
@@ -158,7 +162,7 @@ def train(model, ann_file, epochs=1, save_path='weights/model_weights',save_epoc
 
 
 if __name__=="__main__":
-    #train(model=model, ann_file=ann_file, epochs=2000, save_path='weights/model_weights')
-    read_my_dt('_annotations.coco.json')
+    train(model=model, ann_file=ann_file, epochs=100, save_path='weights/model_weights')
+    #read_my_dt('_annotations.coco.json')
     #read_my_dt('/home/abeer/roboflow/train/_annotations.coco.json')
 
