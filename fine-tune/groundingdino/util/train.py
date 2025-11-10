@@ -9,6 +9,7 @@ from torchvision.ops import box_convert
 from torchvision.ops import box_iou, generalized_box_iou ,sigmoid_focal_loss
 import torch.nn.functional as F
 import bisect
+import warnings
 
 import groundingdino.datasets.transforms as T
 from groundingdino.models import build_model
@@ -33,13 +34,54 @@ def preprocess_caption(caption: str) -> str:
     return result + "."
 
 
+def _resolve_device(requested_device: str) -> str:
+    """Return a valid device string, falling back to CPU when CUDA is unavailable."""
+
+    if isinstance(requested_device, torch.device):
+        device_type = requested_device.type
+        index = requested_device.index
+        requested_device = device_type if index is None else f"{device_type}:{index}"
+
+    if requested_device.startswith("cuda"):
+        if not torch.cuda.is_available():
+            warnings.warn(
+                "CUDA device requested but CUDA is not available. Falling back to CPU.",
+                RuntimeWarning,
+            )
+            return "cpu"
+
+        device_index = 0
+        if requested_device != "cuda":
+            try:
+                device_index = int(requested_device.split(":", 1)[1])
+            except (IndexError, ValueError):
+                device_index = 0
+
+        major, minor = torch.cuda.get_device_capability(device_index)
+        if (major, minor) < (3, 7):
+            device_name = torch.cuda.get_device_name(device_index)
+            warnings.warn(
+                (
+                    f"CUDA device '{device_name}' (compute capability {major}.{minor}) is too old "
+                    "for the current PyTorch build. Falling back to CPU."
+                ),
+                RuntimeWarning,
+            )
+            return "cpu"
+
+    return requested_device
+
+
 def load_model(model_config_path: str, model_checkpoint_path: str, device: str = "cuda"):
+    device = _resolve_device(device)
     args = SLConfig.fromfile(model_config_path)
     args.device = device
     model = build_model(args)
     checkpoint = torch.load(model_checkpoint_path, map_location="cpu")
     model.load_state_dict(clean_state_dict(checkpoint["model"]), strict=False)
+    model = model.to(device)
     model.eval()
+    model.resolved_device = device
     return model
 
 
@@ -62,7 +104,7 @@ def train_image(model,
                 image: torch.Tensor,
                 caption_objects: list,
                 box_target: list,
-                device: str = "cuda"):
+                device: str = None):
 
     def get_object_positions(tokenized, caption_objects):
         positions_dict = {}
@@ -80,6 +122,11 @@ def train_image(model,
     #print(f"Caption is {caption}")
     tokenized = tokenizer(caption)
     object_positions = get_object_positions(tokenized, caption_objects)
+
+    if device is None:
+        device = getattr(model, "resolved_device", "cuda")
+
+    device = _resolve_device(device)
 
     # Move model and input to the device
     model = model.to(device)
