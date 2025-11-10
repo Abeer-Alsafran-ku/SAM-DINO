@@ -8,7 +8,7 @@ from collections import defaultdict
 import torch.optim as optim
 import json
 # Model
-model = load_model("groundingdino/config/GroundingDINO_SwinT_OGC.py", "weights/groundingdino_swint_ogc.pth")
+model = load_model("/home/abeer/aaas/SAM-DINO/fine-tune/groundingdino/config/GroundingDINO_SwinT_OGC.py", "weights/groundingdino_swint_ogc.pth")
 
 # Dataset paths
 images_files=sorted(os.listdir("/home/abeer/roboflow/train"))
@@ -106,7 +106,20 @@ def read_my_dt(json_path):
         
         ann_Dict[img_name]['boxex'].append(data['annotations'][i]['bbox'])
 
-        ann_Dict[img_name]['captions'].append(data['annotations'][i]['category_id'])
+        if data['annotations'][i]['category_id'] == 1:
+            cap = 'bus'
+        elif  data['annotations'][i]['category_id'] == 2:
+            cap = 'car'
+        elif  data['annotations'][i]['category_id'] == 3:
+            cap = 'truck'
+        elif  data['annotations'][i]['category_id'] == 4:
+            cap = 'pickup-truck'
+        elif  data['annotations'][i]['category_id'] == 5:
+            cap = 'van'
+        else:
+            cap = 'not-define'
+
+        ann_Dict[img_name]['captions'].append(cap)
 
     #print(ann_Dict)
 
