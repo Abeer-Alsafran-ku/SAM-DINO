@@ -104,7 +104,15 @@ def read_my_dt(json_path):
         
         img_name =os.path.join("/home/abeer/roboflow/train",img )
         
-        ann_Dict[img_name]['boxex'].append(data['annotations'][i]['bbox'])
+        # COCO format provides bounding boxes as [x, y, width, height].
+        # Convert them to [x1, y1, x2, y2] which is the format expected by
+        # the training utilities.
+        x, y, width, height = data['annotations'][i]['bbox']
+        x1, y1 = x, y
+        x2 = x1 + width
+        y2 = y1 + height
+
+        ann_Dict[img_name]['boxes'].append([x1, y1, x2, y2])
 
         if data['annotations'][i]['category_id'] == 1:
             cap = 'bus'
