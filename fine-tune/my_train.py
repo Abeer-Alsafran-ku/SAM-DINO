@@ -12,6 +12,11 @@ model = load_model("/home/abeer/aaas/SAM-DINO/fine-tune/groundingdino/config/Gro
 
 # Dataset paths
 images_files=sorted(os.listdir("/home/abeer/roboflow/train"))
+
+IMAGES_NUM = 4380
+
+PERCENT = 0.25
+
 ann_file="/home/abeer/roboflow/train/_annotations.coco.json"
 
 def draw_box_with_label(image, output_path, coordinates, label, color=(0, 0, 255), thickness=2, font_scale=0.5):
@@ -150,6 +155,8 @@ def train(model, ann_file, epochs=1, save_path='weights/model_weights',save_epoc
     for epoch in range(epochs):
         total_loss = 0  # Track the total loss for this epoch
         for idx, (IMAGE_PATH, vals) in enumerate(ann_Dict.items()):
+            if idx == IMAGES_NUM* PERCENT:
+                break
             image_source, image = load_image(IMAGE_PATH)
             bxs = vals['boxes']
             captions = vals['captions']
@@ -171,19 +178,19 @@ def train(model, ann_file, epochs=1, save_path='weights/model_weights',save_epoc
             optimizer.step()
             
             total_loss += loss.item()  # Accumulate the loss
-            print(f"Processed image {idx+1}/{len(ann_Dict)}, Loss: {loss.item()}")
+            print(f"Processed image {idx+1}/{len(ann_Dict)*PERCENT}, Loss: {loss.item()}")
 
         # Print the average loss for the epoch
-        print(f"Epoch {epoch+1}/{epochs}, Average Loss: {total_loss / len(ann_Dict)}")
+        print(f"Epoch {epoch+1}/{epochs}, Average Loss: {total_loss / len(ann_Dict)*PERCENT}")
         if (epoch%save_epoch)==0:
             # Save the model's weights after each epoch
-            torch.save(model.state_dict(), f"{save_path}{epoch}.pth")
-            print(f"Model weights saved to {save_path}{epoch}.pth")
+            torch.save(model.state_dict(), f"{save_path}{epoch}_{PERCENT*100}.pth")
+            print(f"Model weights saved to {save_path}{epoch}_{PERCENT*100}.pth")
 
 
 
 if __name__=="__main__":
-    train(model=model, ann_file=ann_file, epochs=100, save_path='weights/model_weights')
+    train(model=model, ann_file=ann_file, epochs=10, save_path='weights/model_weights')
     #read_my_dt('_annotations.coco.json')
     #read_my_dt('/home/abeer/roboflow/train/_annotations.coco.json')
 
