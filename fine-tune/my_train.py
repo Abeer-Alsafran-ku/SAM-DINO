@@ -15,7 +15,7 @@ images_files=sorted(os.listdir("/home/abeer/roboflow/train"))
 
 IMAGES_NUM = 4380
 
-PERCENT = 0.25
+PERCENT = 0.125
 
 ann_file="/home/abeer/roboflow/train/_annotations.coco.json"
 
@@ -155,7 +155,8 @@ def train(model, ann_file, epochs=1, save_path='weights/model_weights',save_epoc
     for epoch in range(epochs):
         total_loss = 0  # Track the total loss for this epoch
         for idx, (IMAGE_PATH, vals) in enumerate(ann_Dict.items()):
-            if idx == IMAGES_NUM* PERCENT:
+            if idx == 400:
+            #if idx == IMAGES_NUM* PERCENT:
                 break
             image_source, image = load_image(IMAGE_PATH)
             bxs = vals['boxes']
@@ -190,7 +191,7 @@ def train(model, ann_file, epochs=1, save_path='weights/model_weights',save_epoc
 
 
 if __name__=="__main__":
-    train(model=model, ann_file=ann_file, epochs=10, save_path='weights/model_weights')
+    train(model=model, ann_file=ann_file, epochs=5, save_path='weights/model_weights')
     #read_my_dt('_annotations.coco.json')
     #read_my_dt('/home/abeer/roboflow/train/_annotations.coco.json')
 
