@@ -33,10 +33,10 @@ def apply_nms_per_phrase(image_source, boxes, logits, phrases, threshold=0.3):
 def process_image(
         model_config="groundingdino/config/GroundingDINO_SwinT_OGC.py",
         model_weights="weights/groundingdino_swint_ogc.pth",
-        image_path="test_pepper.jpg",
+        image_path="multimodal-data/test_images/test_pepper.jpg",
         text_prompt="peduncle.fruit.",
-        box_threshold=0.8,
-        text_threshold=0.40
+        box_threshold=0.25,
+        text_threshold=0.2
 ):
     model = load_model(model_config, model_weights)
     #model.load_state_dict(torch.load(state_dict_path))
@@ -59,8 +59,9 @@ def process_image(
 
 
 if __name__ == "__main__":
-    #model_weights="weights/groundingdino_swint_ogc.pth"
+    model_weights="weights/groundingdino_swint_ogc.pth"
     model_weights="weights/model_weights0_12.5.pth"
     img_path = "/home/abeer/roboflow/train/ministrey_zone_2_Flight_01_01941_JPG.rf.f6dd851625ce27434b3ae9087aed4767.jpg"
     prompt = "bus.car.truck.pickup-truck.van"
     process_image(model_weights=model_weights,image_path=img_path,text_prompt = prompt)
+    #process_image(model_weights=model_weights)

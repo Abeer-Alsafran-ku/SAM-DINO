@@ -1,122 +1,853 @@
 final text_encoder_type: bert-base-uncased
-Regression and Classification loss are 1.0875214338302612 and 0.014533979818224907
-Processed image 1/1095.0, Loss: 0.025409193709492683
-Regression and Classification loss are 502.5149230957031 and 0.010050151497125626
-Processed image 2/1095.0, Loss: 5.0351996421813965
-Regression and Classification loss are 9.598904609680176 and 0.012867489829659462
-Processed image 3/1095.0, Loss: 0.10885652899742126
-Regression and Classification loss are 13.445841789245605 and 0.011673936620354652
-Processed image 4/1095.0, Loss: 0.14613234996795654
-Regression and Classification loss are 12.662001609802246 and 0.012875450775027275
-Processed image 5/1095.0, Loss: 0.13949546217918396
-Regression and Classification loss are 13.571492195129395 and 0.0066278656013309956
-Processed image 6/1095.0, Loss: 0.14234279096126556
-Regression and Classification loss are 18.580718994140625 and 0.010443066246807575
-Processed image 7/1095.0, Loss: 0.19625024497509003
-Regression and Classification loss are 327.88677978515625 and 0.01078607328236103
-Processed image 8/1095.0, Loss: 3.289653778076172
-Regression and Classification loss are 64.16495513916016 and 0.009570218622684479
-Processed image 9/1095.0, Loss: 0.6512197852134705
-Regression and Classification loss are 287.21484375 and 0.010379784740507603
-Processed image 10/1095.0, Loss: 2.882528066635132
-Regression and Classification loss are 278.1847839355469 and 0.009489079937338829
-Processed image 11/1095.0, Loss: 2.79133677482605
-Regression and Classification loss are 5.871146202087402 and 0.009866338223218918
-Processed image 12/1095.0, Loss: 0.06857779622077942
-Regression and Classification loss are 326.2692565917969 and 0.00933041051030159
-Processed image 13/1095.0, Loss: 3.2720229625701904
-Regression and Classification loss are 269.6444091796875 and 0.009427238255739212
-Processed image 14/1095.0, Loss: 2.705871343612671
-Regression and Classification loss are 213.10777282714844 and 0.011537091806530952
-Processed image 15/1095.0, Loss: 2.1426148414611816
-Regression and Classification loss are 13.223366737365723 and 0.00919000431895256
-Processed image 16/1095.0, Loss: 0.14142367243766785
-Regression and Classification loss are 19.611116409301758 and 0.012712117284536362
-Processed image 17/1095.0, Loss: 0.2088232785463333
-Regression and Classification loss are 22.92525291442871 and 0.01845620945096016
-Processed image 18/1095.0, Loss: 0.24770872294902802
-Regression and Classification loss are 498.880859375 and 0.00940808653831482
-Processed image 19/1095.0, Loss: 4.99821662902832
-Regression and Classification loss are 11.09110164642334 and 0.009789304807782173
-Processed image 20/1095.0, Loss: 0.12070031464099884
-Regression and Classification loss are 24.91409683227539 and 0.00978616252541542
-Processed image 21/1095.0, Loss: 0.2589271366596222
-Regression and Classification loss are 491.9977722167969 and 0.008884886279702187
-Processed image 22/1095.0, Loss: 4.928862571716309
-Regression and Classification loss are 307.73577880859375 and 0.009020425379276276
-Processed image 23/1095.0, Loss: 3.0863780975341797
-Regression and Classification loss are 90.58673095703125 and 0.009749732911586761
-Processed image 24/1095.0, Loss: 0.9156169891357422
-Regression and Classification loss are 7.386116981506348 and 0.00789349153637886
-Processed image 25/1095.0, Loss: 0.0817546546459198
-Regression and Classification loss are 439.4344787597656 and 0.008750522509217262
-Processed image 26/1095.0, Loss: 4.403095245361328
-Regression and Classification loss are 11.528919219970703 and 0.010614865459501743
-Processed image 27/1095.0, Loss: 0.12590405344963074
-Regression and Classification loss are 126.67938232421875 and 0.008652746677398682
-Processed image 28/1095.0, Loss: 1.2754466533660889
-Regression and Classification loss are 216.68963623046875 and 0.008935881778597832
-Processed image 29/1095.0, Loss: 2.1758322715759277
-Regression and Classification loss are 15.919693946838379 and 0.011997559107840061
-Processed image 30/1095.0, Loss: 0.17119450867176056
-Regression and Classification loss are 233.70626831054688 and 0.00848958920687437
-Processed image 31/1095.0, Loss: 2.3455522060394287
-Regression and Classification loss are 111.3991928100586 and 0.009847968816757202
-Processed image 32/1095.0, Loss: 1.1238398551940918
-Regression and Classification loss are 291.00946044921875 and 0.008582287468016148
-Processed image 33/1095.0, Loss: 2.9186768531799316
-Regression and Classification loss are 199.80662536621094 and 0.011010570451617241
-Processed image 34/1095.0, Loss: 2.0090768337249756
-Regression and Classification loss are 117.39188385009766 and 0.011957175098359585
-Processed image 35/1095.0, Loss: 1.1858760118484497
-Regression and Classification loss are 393.59100341796875 and 0.009145135059952736
-Processed image 36/1095.0, Loss: 3.9450550079345703
-Regression and Classification loss are 347.2626037597656 and 0.010900945402681828
-Processed image 37/1095.0, Loss: 3.4835269451141357
-Regression and Classification loss are 326.1600036621094 and 0.011074163019657135
-Processed image 38/1095.0, Loss: 3.272674083709717
-Regression and Classification loss are 309.3969421386719 and 0.01153720635920763
-Processed image 39/1095.0, Loss: 3.105506658554077
-Regression and Classification loss are 20.288911819458008 and 0.012769844383001328
-Processed image 40/1095.0, Loss: 0.21565896272659302
-Regression and Classification loss are 64.33837890625 and 0.010756385512650013
-Processed image 41/1095.0, Loss: 0.6541401743888855
-Regression and Classification loss are 500.5169372558594 and 0.008316420949995518
-Processed image 42/1095.0, Loss: 5.013485908508301
-Regression and Classification loss are 184.3704376220703 and 0.008790520019829273
-Processed image 43/1095.0, Loss: 1.8524948358535767
-Regression and Classification loss are 10.07198715209961 and 0.011117350310087204
-Processed image 44/1095.0, Loss: 0.1118372231721878
-Regression and Classification loss are 10.469428062438965 and 0.009193112142384052
-Processed image 45/1095.0, Loss: 0.11388739198446274
-Regression and Classification loss are 17.767475128173828 and 0.01113393809646368
-Processed image 46/1095.0, Loss: 0.18880867958068848
-Regression and Classification loss are 75.78850555419922 and 0.010199949145317078
-Processed image 47/1095.0, Loss: 0.7680850028991699
-Regression and Classification loss are 137.6647186279297 and 0.010945135727524757
-Processed image 48/1095.0, Loss: 1.3875921964645386
-Regression and Classification loss are 240.28074645996094 and 0.012000801973044872
-Processed image 49/1095.0, Loss: 2.4148082733154297
-Regression and Classification loss are 246.09938049316406 and 0.009884837083518505
-Processed image 50/1095.0, Loss: 2.4708786010742188
-Regression and Classification loss are 19.734149932861328 and 0.010127127170562744
-Processed image 51/1095.0, Loss: 0.20746862888336182
-Regression and Classification loss are 18.952030181884766 and 0.008743413724005222
-Processed image 52/1095.0, Loss: 0.1982637196779251
-Regression and Classification loss are 159.63497924804688 and 0.010585058480501175
-Processed image 53/1095.0, Loss: 1.6069347858428955
-Regression and Classification loss are 321.89971923828125 and 0.010924043133854866
-Processed image 54/1095.0, Loss: 3.2299211025238037
-Regression and Classification loss are 84.7323226928711 and 0.020141880959272385
-Processed image 55/1095.0, Loss: 0.867465078830719
-Regression and Classification loss are 272.5938720703125 and 0.008446235209703445
-Processed image 56/1095.0, Loss: 2.734384775161743
-Regression and Classification loss are 22.564420700073242 and 0.010750280693173409
-Processed image 57/1095.0, Loss: 0.2363944798707962
-Regression and Classification loss are 50.11088943481445 and 0.013844949193298817
-Processed image 58/1095.0, Loss: 0.5149538516998291
-Regression and Classification loss are 372.4913024902344 and 0.011100102216005325
-Processed image 59/1095.0, Loss: 3.7360129356384277
-Regression and Classification loss are 13.454726219177246 and 0.013141555711627007
-Processed image 60/1095.0, Loss: 0.1476888209581375
-Regression and Classification loss are 11.118388175964355 and 0.013433098793029785
+Regression and Classification loss are 1.5167946815490723 and 0.009137576445937157
+Processed image 1/547.5, Loss: 0.024305522441864014
+Regression and Classification loss are 346.8579406738281 and 0.010874396190047264
+Processed image 2/547.5, Loss: 3.4794538021087646
+Regression and Classification loss are 12.704002380371094 and 0.012949418276548386
+Processed image 3/547.5, Loss: 0.13998943567276
+Regression and Classification loss are 14.82692813873291 and 0.010511521250009537
+Processed image 4/547.5, Loss: 0.1587807983160019
+Regression and Classification loss are 23.59365463256836 and 0.01278602983802557
+Processed image 5/547.5, Loss: 0.24872256815433502
+Regression and Classification loss are 13.254409790039062 and 0.012160904705524445
+Processed image 6/547.5, Loss: 0.14470499753952026
+Regression and Classification loss are 18.34612464904785 and 0.010629752650856972
+Processed image 7/547.5, Loss: 0.19409100711345673
+Regression and Classification loss are 15.841524124145508 and 0.011490434408187866
+Processed image 8/547.5, Loss: 0.1699056774377823
+Regression and Classification loss are 64.73506927490234 and 0.009849117137491703
+Processed image 9/547.5, Loss: 0.6571998000144958
+Regression and Classification loss are 158.11279296875 and 0.01059144176542759
+Processed image 10/547.5, Loss: 1.5917192697525024
+Regression and Classification loss are 271.060791015625 and 0.010223598219454288
+Processed image 11/547.5, Loss: 2.7208313941955566
+Regression and Classification loss are 10.344517707824707 and 0.010100463405251503
+Processed image 12/547.5, Loss: 0.11354563385248184
+Regression and Classification loss are 4.9099626541137695 and 0.009421289898455143
+Processed image 13/547.5, Loss: 0.05852091312408447
+Regression and Classification loss are 156.40687561035156 and 0.010847038589417934
+Processed image 14/547.5, Loss: 1.5749157667160034
+Regression and Classification loss are 97.37948608398438 and 0.009687661193311214
+Processed image 15/547.5, Loss: 0.9834824800491333
+Regression and Classification loss are 6.176156997680664 and 0.012514653615653515
+Processed image 16/547.5, Loss: 0.07427622377872467
+Regression and Classification loss are 362.41510009765625 and 0.01071682944893837
+Processed image 17/547.5, Loss: 3.6348679065704346
+Regression and Classification loss are 8.194103240966797 and 0.020266354084014893
+Processed image 18/547.5, Loss: 0.10220738500356674
+Regression and Classification loss are 26.706878662109375 and 0.012117184698581696
+Processed image 19/547.5, Loss: 0.279185950756073
+Regression and Classification loss are 11.09770679473877 and 0.013565929606556892
+Processed image 20/547.5, Loss: 0.12454299628734589
+Regression and Classification loss are 16.318374633789062 and 0.012894752435386181
+Processed image 21/547.5, Loss: 0.17607849836349487
+Regression and Classification loss are 137.94259643554688 and 0.00896465964615345
+Processed image 22/547.5, Loss: 1.3883905410766602
+Regression and Classification loss are 198.77772521972656 and 0.01260004099458456
+Processed image 23/547.5, Loss: 2.0003771781921387
+Regression and Classification loss are 119.3395004272461 and 0.011229604482650757
+Processed image 24/547.5, Loss: 1.2046246528625488
+Regression and Classification loss are 8.20186996459961 and 0.009810216724872589
+Processed image 25/547.5, Loss: 0.09182891249656677
+Regression and Classification loss are 129.16871643066406 and 0.010048612020909786
+Processed image 26/547.5, Loss: 1.301735758781433
+Regression and Classification loss are 151.6095428466797 and 0.011245867237448692
+Processed image 27/547.5, Loss: 1.5273412466049194
+Regression and Classification loss are 128.9220733642578 and 0.008046697825193405
+Processed image 28/547.5, Loss: 1.2972674369812012
+Regression and Classification loss are 148.90423583984375 and 0.010643444955348969
+Processed image 29/547.5, Loss: 1.4996857643127441
+Regression and Classification loss are 116.06424713134766 and 0.009212944656610489
+Processed image 30/547.5, Loss: 1.1698554754257202
+Regression and Classification loss are 91.74066925048828 and 0.008317026309669018
+Processed image 31/547.5, Loss: 0.9257237315177917
+Regression and Classification loss are 28.739234924316406 and 0.010930143296718597
+Processed image 32/547.5, Loss: 0.29832249879837036
+Regression and Classification loss are 136.8099365234375 and 0.008861817419528961
+Processed image 33/547.5, Loss: 1.3769611120224
+Regression and Classification loss are 33.03123474121094 and 0.01330515369772911
+Processed image 34/547.5, Loss: 0.3436174988746643
+Regression and Classification loss are 60.035213470458984 and 0.012488148175179958
+Processed image 35/547.5, Loss: 0.6128402352333069
+Regression and Classification loss are 99.68843841552734 and 0.011032850481569767
+Processed image 36/547.5, Loss: 1.0079171657562256
+Regression and Classification loss are 140.3832244873047 and 0.01151243969798088
+Processed image 37/547.5, Loss: 1.4153445959091187
+Regression and Classification loss are 98.14656066894531 and 0.011683470569550991
+Processed image 38/547.5, Loss: 0.9931490421295166
+Regression and Classification loss are 177.54798889160156 and 0.011004840955138206
+Processed image 39/547.5, Loss: 1.7864845991134644
+Regression and Classification loss are 22.336668014526367 and 0.013344284147024155
+Processed image 40/547.5, Loss: 0.23671096563339233
+Regression and Classification loss are 389.1897277832031 and 0.00903348345309496
+Processed image 41/547.5, Loss: 3.900930643081665
+Regression and Classification loss are 30.296329498291016 and 0.011353163048624992
+Processed image 42/547.5, Loss: 0.31431645154953003
+Regression and Classification loss are 160.38223266601562 and 0.008375372737646103
+Processed image 43/547.5, Loss: 1.6121976375579834
+Regression and Classification loss are 15.544594764709473 and 0.01115083321928978
+Processed image 44/547.5, Loss: 0.16659678518772125
+Regression and Classification loss are 18.323347091674805 and 0.01068845670670271
+Processed image 45/547.5, Loss: 0.19392192363739014
+Regression and Classification loss are 8.809884071350098 and 0.012050556018948555
+Processed image 46/547.5, Loss: 0.10014939308166504
+Regression and Classification loss are 34.87467956542969 and 0.010042622685432434
+Processed image 47/547.5, Loss: 0.3587893843650818
+Regression and Classification loss are 134.05337524414062 and 0.01071107853204012
+Processed image 48/547.5, Loss: 1.3512448072433472
+Regression and Classification loss are 227.27056884765625 and 0.013585878536105156
+Processed image 49/547.5, Loss: 2.2862913608551025
+Regression and Classification loss are 493.509521484375 and 0.009483322501182556
+Processed image 50/547.5, Loss: 4.944578647613525
+Regression and Classification loss are 27.317352294921875 and 0.008378670550882816
+Processed image 51/547.5, Loss: 0.28155219554901123
+Regression and Classification loss are 19.7753849029541 and 0.009880108758807182
+Processed image 52/547.5, Loss: 0.20763395726680756
+Regression and Classification loss are 129.41624450683594 and 0.012491361238062382
+Processed image 53/547.5, Loss: 1.3066537380218506
+Regression and Classification loss are 322.87371826171875 and 0.010416941717267036
+Processed image 54/547.5, Loss: 3.239154100418091
+Regression and Classification loss are 80.43367004394531 and 0.02560603618621826
+Processed image 55/547.5, Loss: 0.8299427032470703
+Regression and Classification loss are 278.35626220703125 and 0.010338418185710907
+Processed image 56/547.5, Loss: 2.793900966644287
+Regression and Classification loss are 37.91078567504883 and 0.009870316833257675
+Processed image 57/547.5, Loss: 0.38897818326950073
+Regression and Classification loss are 51.000396728515625 and 0.010533970780670643
+Processed image 58/547.5, Loss: 0.5205379724502563
+Regression and Classification loss are 4.010672092437744 and 0.010095263831317425
+Processed image 59/547.5, Loss: 0.050201985985040665
+Regression and Classification loss are 32.162437438964844 and 0.012567596510052681
+Processed image 60/547.5, Loss: 0.3341919779777527
+Regression and Classification loss are 13.204546928405762 and 0.0088157057762146
+Processed image 61/547.5, Loss: 0.1408611685037613
+Regression and Classification loss are 14.999115943908691 and 0.010788778774440289
+Processed image 62/547.5, Loss: 0.1607799381017685
+Regression and Classification loss are 214.4068603515625 and 0.009784583933651447
+Processed image 63/547.5, Loss: 2.153853178024292
+Regression and Classification loss are 102.1093978881836 and 0.012015791609883308
+Processed image 64/547.5, Loss: 1.0331097841262817
+Regression and Classification loss are 16.964885711669922 and 0.01339707151055336
+Processed image 65/547.5, Loss: 0.18304592370986938
+Regression and Classification loss are 18.955001831054688 and 0.011218130588531494
+Processed image 66/547.5, Loss: 0.2007681429386139
+Regression and Classification loss are 58.85439682006836 and 0.009410199709236622
+Processed image 67/547.5, Loss: 0.5979541540145874
+Regression and Classification loss are 10.473312377929688 and 0.009534573182463646
+Processed image 68/547.5, Loss: 0.11426769942045212
+Regression and Classification loss are 186.4720458984375 and 0.010331971570849419
+Processed image 69/547.5, Loss: 1.8750524520874023
+Regression and Classification loss are 24.17051124572754 and 0.012857336550951004
+Processed image 70/547.5, Loss: 0.2545624375343323
+Regression and Classification loss are 66.6686782836914 and 0.026232656091451645
+Processed image 71/547.5, Loss: 0.6929194331169128
+Regression and Classification loss are 82.52197265625 and 0.010859484784305096
+Processed image 72/547.5, Loss: 0.8360791802406311
+Regression and Classification loss are 87.96533203125 and 0.012313833460211754
+Processed image 73/547.5, Loss: 0.8919671177864075
+Regression and Classification loss are 74.4101791381836 and 0.010881003923714161
+Processed image 74/547.5, Loss: 0.7549827694892883
+Regression and Classification loss are 16.192581176757812 and 0.011390350759029388
+Processed image 75/547.5, Loss: 0.17331615090370178
+Regression and Classification loss are 48.27140808105469 and 0.010409010574221611
+Processed image 76/547.5, Loss: 0.49312305450439453
+Regression and Classification loss are 10.764169692993164 and 0.009483562782406807
+Processed image 77/547.5, Loss: 0.1171252578496933
+Regression and Classification loss are 24.836475372314453 and 0.009597038850188255
+Processed image 78/547.5, Loss: 0.25796177983283997
+Regression and Classification loss are 154.5281524658203 and 0.008820547722280025
+Processed image 79/547.5, Loss: 1.5541020631790161
+Regression and Classification loss are 40.41331481933594 and 0.01082620956003666
+Processed image 80/547.5, Loss: 0.4149593412876129
+Regression and Classification loss are 23.655921936035156 and 0.009878096170723438
+Processed image 81/547.5, Loss: 0.24643731117248535
+Regression and Classification loss are 26.969728469848633 and 0.014773394912481308
+Processed image 82/547.5, Loss: 0.28447067737579346
+Regression and Classification loss are 8.42362117767334 and 0.005736850667744875
+Processed image 83/547.5, Loss: 0.08997306227684021
+Regression and Classification loss are 14.909483909606934 and 0.010363494977355003
+Processed image 84/547.5, Loss: 0.15945832431316376
+Regression and Classification loss are 61.25908660888672 and 0.00963339488953352
+Processed image 85/547.5, Loss: 0.6222242712974548
+Regression and Classification loss are 47.15326690673828 and 0.009059580974280834
+Processed image 86/547.5, Loss: 0.4805922508239746
+Regression and Classification loss are 41.152435302734375 and 0.011484789662063122
+Processed image 87/547.5, Loss: 0.42300915718078613
+Regression and Classification loss are 172.7064666748047 and 0.010789850726723671
+Processed image 88/547.5, Loss: 1.7378544807434082
+Regression and Classification loss are 8.520539283752441 and 0.012442128732800484
+Processed image 89/547.5, Loss: 0.0976475179195404
+Regression and Classification loss are 110.10910034179688 and 0.011545967310667038
+Processed image 90/547.5, Loss: 1.1126370429992676
+Regression and Classification loss are 40.991310119628906 and 0.009957605972886086
+Processed image 91/547.5, Loss: 0.4198707044124603
+Regression and Classification loss are 59.726070404052734 and 0.012118391692638397
+Processed image 92/547.5, Loss: 0.6093791127204895
+Regression and Classification loss are 211.5585479736328 and 0.0068846577778458595
+Processed image 93/547.5, Loss: 2.122469902038574
+Regression and Classification loss are 24.72429084777832 and 0.00807349756360054
+Processed image 94/547.5, Loss: 0.2553164064884186
+Regression and Classification loss are 2.564042329788208 and 0.009707482531666756
+Processed image 95/547.5, Loss: 0.03534790500998497
+Regression and Classification loss are 17.8509578704834 and 0.011013362556695938
+Processed image 96/547.5, Loss: 0.18952293694019318
+Regression and Classification loss are 38.07517623901367 and 0.02251463383436203
+Processed image 97/547.5, Loss: 0.40326640009880066
+Regression and Classification loss are 44.04524230957031 and 0.0107305021956563
+Processed image 98/547.5, Loss: 0.45118293166160583
+Regression and Classification loss are 11.549507141113281 and 0.010341020300984383
+Processed image 99/547.5, Loss: 0.1258360892534256
+Regression and Classification loss are 18.742929458618164 and 0.009662562981247902
+Processed image 100/547.5, Loss: 0.19709186255931854
+Regression and Classification loss are 11.36501407623291 and 0.009427085518836975
+Processed image 101/547.5, Loss: 0.12307722121477127
+Regression and Classification loss are 52.43013000488281 and 0.010352859273552895
+Processed image 102/547.5, Loss: 0.5346541404724121
+Regression and Classification loss are 182.44744873046875 and 0.00821742694824934
+Processed image 103/547.5, Loss: 1.8326919078826904
+Regression and Classification loss are 496.0008850097656 and 0.009864851832389832
+Processed image 104/547.5, Loss: 4.969873428344727
+Regression and Classification loss are 140.81858825683594 and 0.009998835623264313
+Processed image 105/547.5, Loss: 1.4181846380233765
+Regression and Classification loss are 10.78860092163086 and 0.00817777682095766
+Processed image 106/547.5, Loss: 0.11606378853321075
+Regression and Classification loss are 16.27212905883789 and 0.010003689676523209
+Processed image 107/547.5, Loss: 0.17272497713565826
+Regression and Classification loss are 8.731595039367676 and 0.005911544896662235
+Processed image 108/547.5, Loss: 0.09322749078273773
+Regression and Classification loss are 70.57621002197266 and 0.011091351509094238
+Processed image 109/547.5, Loss: 0.7168534398078918
+Regression and Classification loss are 199.52395629882812 and 0.007224507164210081
+Processed image 110/547.5, Loss: 2.0024640560150146
+Regression and Classification loss are 176.6881866455078 and 0.009139562025666237
+Processed image 111/547.5, Loss: 1.7760213613510132
+Regression and Classification loss are 150.84715270996094 and 0.009299565106630325
+Processed image 112/547.5, Loss: 1.5177710056304932
+Regression and Classification loss are 197.99171447753906 and 0.00925575289875269
+Processed image 113/547.5, Loss: 1.9891728162765503
+Regression and Classification loss are 8.597768783569336 and 0.009143885225057602
+Processed image 114/547.5, Loss: 0.09512157738208771
+Regression and Classification loss are 272.35723876953125 and 0.008125770837068558
+Processed image 115/547.5, Loss: 2.7316980361938477
+Regression and Classification loss are 28.13443374633789 and 0.010179344564676285
+Processed image 116/547.5, Loss: 0.29152366518974304
+Regression and Classification loss are 64.98130798339844 and 0.010005238465964794
+Processed image 117/547.5, Loss: 0.6598182916641235
+Regression and Classification loss are 183.31227111816406 and 0.010308196768164635
+Processed image 118/547.5, Loss: 1.843430757522583
+Regression and Classification loss are 492.39459228515625 and 0.009454630315303802
+Processed image 119/547.5, Loss: 4.933400630950928
+Regression and Classification loss are 162.47671508789062 and 0.007613108027726412
+Processed image 120/547.5, Loss: 1.6323801279067993
+Regression and Classification loss are 8.073376655578613 and 0.00900905579328537
+Processed image 121/547.5, Loss: 0.08974281698465347
+Regression and Classification loss are 11.728214263916016 and 0.010104434564709663
+Processed image 122/547.5, Loss: 0.12738656997680664
+Regression and Classification loss are 267.7166442871094 and 0.0074503980576992035
+Processed image 123/547.5, Loss: 2.684616804122925
+Regression and Classification loss are 209.59890747070312 and 0.007688804063946009
+Processed image 124/547.5, Loss: 2.103677749633789
+Regression and Classification loss are 109.10589599609375 and 0.011507812887430191
+Processed image 125/547.5, Loss: 1.1025668382644653
+Regression and Classification loss are 184.42173767089844 and 0.011213801801204681
+Processed image 126/547.5, Loss: 1.855431079864502
+Regression and Classification loss are 17.03813934326172 and 0.010480061173439026
+Processed image 127/547.5, Loss: 0.1808614581823349
+Regression and Classification loss are 88.2305679321289 and 0.008565442636609077
+Processed image 128/547.5, Loss: 0.8908711075782776
+Regression and Classification loss are 9.863844871520996 and 0.008694468066096306
+Processed image 129/547.5, Loss: 0.10733291506767273
+Regression and Classification loss are 136.35487365722656 and 0.009054458700120449
+Processed image 130/547.5, Loss: 1.372603178024292
+Regression and Classification loss are 61.08768081665039 and 0.012756958603858948
+Processed image 131/547.5, Loss: 0.6236337423324585
+Regression and Classification loss are 38.44442367553711 and 0.009675372391939163
+Processed image 132/547.5, Loss: 0.39411962032318115
+Regression and Classification loss are 157.24720764160156 and 0.007705350406467915
+Processed image 133/547.5, Loss: 1.5801774263381958
+Regression and Classification loss are 42.809181213378906 and 0.01203596405684948
+Processed image 134/547.5, Loss: 0.44012776017189026
+Regression and Classification loss are 73.19210052490234 and 0.012397527694702148
+Processed image 135/547.5, Loss: 0.7443185448646545
+Regression and Classification loss are 171.07395935058594 and 0.018421286717057228
+Processed image 136/547.5, Loss: 1.7291609048843384
+Regression and Classification loss are 392.97216796875 and 0.011829808354377747
+Processed image 137/547.5, Loss: 3.941551446914673
+Regression and Classification loss are 281.3133544921875 and 0.008711530826985836
+Processed image 138/547.5, Loss: 2.821845054626465
+Regression and Classification loss are 18.596223831176758 and 0.00799819827079773
+Processed image 139/547.5, Loss: 0.19396042823791504
+Regression and Classification loss are 251.447998046875 and 0.010287903249263763
+Processed image 140/547.5, Loss: 2.5247678756713867
+Regression and Classification loss are 10.681839942932129 and 0.010311085730791092
+Processed image 141/547.5, Loss: 0.11712948977947235
+Regression and Classification loss are 50.87726974487305 and 0.008574463427066803
+Processed image 142/547.5, Loss: 0.5173471570014954
+Regression and Classification loss are 90.74850463867188 and 0.0088096484541893
+Processed image 143/547.5, Loss: 0.9162946343421936
+Regression and Classification loss are 119.60437774658203 and 0.010545488446950912
+Processed image 144/547.5, Loss: 1.2065892219543457
+Regression and Classification loss are 53.55671691894531 and 0.011260705068707466
+Processed image 145/547.5, Loss: 0.5468278527259827
+Regression and Classification loss are 99.85358428955078 and 0.01032218337059021
+Processed image 146/547.5, Loss: 1.0088579654693604
+Regression and Classification loss are 21.15479850769043 and 0.010052315890789032
+Processed image 147/547.5, Loss: 0.22160029411315918
+Regression and Classification loss are 14.192524909973145 and 0.01241464726626873
+Processed image 148/547.5, Loss: 0.15433989465236664
+Regression and Classification loss are 273.0215759277344 and 0.01088094525039196
+Processed image 149/547.5, Loss: 2.7410967350006104
+Regression and Classification loss are 76.33911895751953 and 0.009621911682188511
+Processed image 150/547.5, Loss: 0.7730131149291992
+Regression and Classification loss are 14.463844299316406 and 0.009626275859773159
+Processed image 151/547.5, Loss: 0.15426470339298248
+Regression and Classification loss are 25.346141815185547 and 0.01058595534414053
+Processed image 152/547.5, Loss: 0.26404738426208496
+Regression and Classification loss are 143.8617401123047 and 0.008543561212718487
+Processed image 153/547.5, Loss: 1.4471609592437744
+Regression and Classification loss are 203.027099609375 and 0.008282588794827461
+Processed image 154/547.5, Loss: 2.0385537147521973
+Regression and Classification loss are 13.784090995788574 and 0.011268027126789093
+Processed image 155/547.5, Loss: 0.14910894632339478
+Regression and Classification loss are 27.22635269165039 and 0.011949717067182064
+Processed image 156/547.5, Loss: 0.28421324491500854
+Regression and Classification loss are 195.0322265625 and 0.006455832626670599
+Processed image 157/547.5, Loss: 1.9567780494689941
+Regression and Classification loss are 183.372314453125 and 0.007920939475297928
+Processed image 158/547.5, Loss: 1.841644048690796
+Regression and Classification loss are 216.29771423339844 and 0.011120861396193504
+Processed image 159/547.5, Loss: 2.174097776412964
+Regression and Classification loss are 344.2430419921875 and 0.010543006472289562
+Processed image 160/547.5, Loss: 3.4529733657836914
+Regression and Classification loss are 46.43537521362305 and 0.010134299285709858
+Processed image 161/547.5, Loss: 0.4744880497455597
+Regression and Classification loss are 435.30523681640625 and 0.009330443106591702
+Processed image 162/547.5, Loss: 4.362382411956787
+Regression and Classification loss are 44.359004974365234 and 0.010420005768537521
+Processed image 163/547.5, Loss: 0.4540100395679474
+Regression and Classification loss are 10.280338287353516 and 0.010727867484092712
+Processed image 164/547.5, Loss: 0.11353124678134918
+Regression and Classification loss are 62.59560012817383 and 0.007692867890000343
+Processed image 165/547.5, Loss: 0.6336488723754883
+Regression and Classification loss are 259.8801574707031 and 0.00975074153393507
+Processed image 166/547.5, Loss: 2.6085524559020996
+Regression and Classification loss are 54.440189361572266 and 0.009020212106406689
+Processed image 167/547.5, Loss: 0.5534220933914185
+Regression and Classification loss are 211.0406951904297 and 0.009390711784362793
+Processed image 168/547.5, Loss: 2.119797706604004
+Regression and Classification loss are 66.33883666992188 and 0.010962579399347305
+Processed image 169/547.5, Loss: 0.6743509769439697
+Regression and Classification loss are 8.460809707641602 and 0.008308039046823978
+Processed image 170/547.5, Loss: 0.09291613101959229
+Regression and Classification loss are 493.66156005859375 and 0.008329481817781925
+Processed image 171/547.5, Loss: 4.944944858551025
+Regression and Classification loss are 194.67501831054688 and 0.010095005854964256
+Processed image 172/547.5, Loss: 1.9568451642990112
+Regression and Classification loss are 192.1313934326172 and 0.008113736286759377
+Processed image 173/547.5, Loss: 1.9294276237487793
+Regression and Classification loss are 377.52716064453125 and 0.007647818885743618
+Processed image 174/547.5, Loss: 3.78291916847229
+Regression and Classification loss are 98.15836334228516 and 0.010353460907936096
+Processed image 175/547.5, Loss: 0.9919370412826538
+Regression and Classification loss are 18.624364852905273 and 0.01881449855864048
+Processed image 176/547.5, Loss: 0.20505814254283905
+Regression and Classification loss are 10.733297348022461 and 0.011473160237073898
+Processed image 177/547.5, Loss: 0.1188061386346817
+Regression and Classification loss are 18.66647720336914 and 0.007825715467333794
+Processed image 178/547.5, Loss: 0.1944904923439026
+Regression and Classification loss are 24.349332809448242 and 0.00850247498601675
+Processed image 179/547.5, Loss: 0.2519958019256592
+Regression and Classification loss are 143.047607421875 and 0.0067621394991874695
+Processed image 180/547.5, Loss: 1.4372382164001465
+Regression and Classification loss are 274.0214538574219 and 0.007972810417413712
+Processed image 181/547.5, Loss: 2.748187303543091
+Regression and Classification loss are 43.80905532836914 and 0.008040209300816059
+Processed image 182/547.5, Loss: 0.44613075256347656
+Regression and Classification loss are 36.22077941894531 and 0.012163345701992512
+Processed image 183/547.5, Loss: 0.37437114119529724
+Regression and Classification loss are 14.619429588317871 and 0.009939143434166908
+Processed image 184/547.5, Loss: 0.15613344311714172
+Regression and Classification loss are 11.225220680236816 and 0.008806137368083
+Processed image 185/547.5, Loss: 0.12105834484100342
+Regression and Classification loss are 228.19581604003906 and 0.008927278220653534
+Processed image 186/547.5, Loss: 2.2908854484558105
+Regression and Classification loss are 25.533885955810547 and 0.008462972939014435
+Processed image 187/547.5, Loss: 0.26380181312561035
+Regression and Classification loss are 16.391677856445312 and 0.00892966240644455
+Processed image 188/547.5, Loss: 0.17284643650054932
+Regression and Classification loss are 17.869762420654297 and 0.02055535465478897
+Processed image 189/547.5, Loss: 0.19925296306610107
+Regression and Classification loss are 21.412450790405273 and 0.009907718747854233
+Processed image 190/547.5, Loss: 0.2240322232246399
+Regression and Classification loss are 16.799501419067383 and 0.009202718734741211
+Processed image 191/547.5, Loss: 0.17719772458076477
+Regression and Classification loss are 117.07417297363281 and 0.017680585384368896
+Processed image 192/547.5, Loss: 1.1884222030639648
+Regression and Classification loss are 17.743892669677734 and 0.009373238310217857
+Processed image 193/547.5, Loss: 0.186812162399292
+Regression and Classification loss are 274.3169860839844 and 0.009689354337751865
+Processed image 194/547.5, Loss: 2.752859115600586
+Regression and Classification loss are 242.23626708984375 and 0.011578205972909927
+Processed image 195/547.5, Loss: 2.433940887451172
+Regression and Classification loss are 18.18883514404297 and 0.011304570361971855
+Processed image 196/547.5, Loss: 0.19319291412830353
+Regression and Classification loss are 263.2123107910156 and 0.009944606572389603
+Processed image 197/547.5, Loss: 2.6420676708221436
+Regression and Classification loss are 7.845795154571533 and 0.00706487288698554
+Processed image 198/547.5, Loss: 0.08552282303571701
+Regression and Classification loss are 26.807109832763672 and 0.01770039275288582
+Processed image 199/547.5, Loss: 0.2857714891433716
+Regression and Classification loss are 36.27017593383789 and 0.007707110606133938
+Processed image 200/547.5, Loss: 0.3704088628292084
+Regression and Classification loss are 7.715734481811523 and 0.008804090321063995
+Processed image 201/547.5, Loss: 0.08596143126487732
+Regression and Classification loss are 156.4594268798828 and 0.008838087320327759
+Processed image 202/547.5, Loss: 1.5734323263168335
+Regression and Classification loss are 100.61306762695312 and 0.009672772139310837
+Processed image 203/547.5, Loss: 1.0158034563064575
+Regression and Classification loss are 12.534191131591797 and 0.010357252322137356
+Processed image 204/547.5, Loss: 0.13569915294647217
+Regression and Classification loss are 24.016311645507812 and 0.019316377118229866
+Processed image 205/547.5, Loss: 0.25947949290275574
+Regression and Classification loss are 13.418497085571289 and 0.009956593625247478
+Processed image 206/547.5, Loss: 0.1441415697336197
+Regression and Classification loss are 423.3160705566406 and 0.017109084874391556
+Processed image 207/547.5, Loss: 4.250269412994385
+Regression and Classification loss are 9.458197593688965 and 0.011925579980015755
+Processed image 208/547.5, Loss: 0.1065075546503067
+Regression and Classification loss are 13.151009559631348 and 0.005208899732679129
+Processed image 209/547.5, Loss: 0.1367189884185791
+Regression and Classification loss are 241.80625915527344 and 0.006154624279588461
+Processed image 210/547.5, Loss: 2.4242169857025146
+Regression and Classification loss are 52.84761047363281 and 0.010103782638907433
+Processed image 211/547.5, Loss: 0.5385798811912537
+Regression and Classification loss are 63.38047790527344 and 0.01435804832726717
+Processed image 212/547.5, Loss: 0.6481627821922302
+Regression and Classification loss are 170.70388793945312 and 0.012318792752921581
+Processed image 213/547.5, Loss: 1.7193577289581299
+Regression and Classification loss are 145.875244140625 and 0.010846665129065514
+Processed image 214/547.5, Loss: 1.4695990085601807
+Regression and Classification loss are 15.789871215820312 and 0.010573619976639748
+Processed image 215/547.5, Loss: 0.16847233474254608
+Regression and Classification loss are 300.84283447265625 and 0.008918961510062218
+Processed image 216/547.5, Loss: 3.0173473358154297
+Regression and Classification loss are 4.8198065757751465 and 0.010545564815402031
+Processed image 217/547.5, Loss: 0.05874362587928772
+Regression and Classification loss are 15.92378044128418 and 0.008577093482017517
+Processed image 218/547.5, Loss: 0.16781489551067352
+Regression and Classification loss are 132.88037109375 and 0.01117406040430069
+Processed image 219/547.5, Loss: 1.339977741241455
+Regression and Classification loss are 340.82061767578125 and 0.010125196538865566
+Processed image 220/547.5, Loss: 3.4183311462402344
+Regression and Classification loss are 13.023154258728027 and 0.009904990904033184
+Processed image 221/547.5, Loss: 0.14013653993606567
+Regression and Classification loss are 100.57593536376953 and 0.009131461381912231
+Processed image 222/547.5, Loss: 1.0148907899856567
+Regression and Classification loss are 294.677001953125 and 0.008920105174183846
+Processed image 223/547.5, Loss: 2.9556901454925537
+Regression and Classification loss are 107.11674499511719 and 0.009301356971263885
+Processed image 224/547.5, Loss: 1.080468773841858
+Regression and Classification loss are 59.40834426879883 and 0.009518994949758053
+Processed image 225/547.5, Loss: 0.603602409362793
+Regression and Classification loss are 177.79092407226562 and 0.01120675541460514
+Processed image 226/547.5, Loss: 1.7891159057617188
+Regression and Classification loss are 32.607181549072266 and 0.010761391371488571
+Processed image 227/547.5, Loss: 0.3368331789970398
+Regression and Classification loss are 37.5563850402832 and 0.010207924991846085
+Processed image 228/547.5, Loss: 0.3857717514038086
+Regression and Classification loss are 166.87705993652344 and 0.01235651969909668
+Processed image 229/547.5, Loss: 1.6811270713806152
+Regression and Classification loss are 21.5654296875 and 0.008085396140813828
+Processed image 230/547.5, Loss: 0.22373969852924347
+Regression and Classification loss are 15.193807601928711 and 0.008252719417214394
+Processed image 231/547.5, Loss: 0.16019079089164734
+Regression and Classification loss are 40.78886413574219 and 0.009105708450078964
+Processed image 232/547.5, Loss: 0.4169943332672119
+Regression and Classification loss are 91.08476257324219 and 0.010693393647670746
+Processed image 233/547.5, Loss: 0.9215409755706787
+Regression and Classification loss are 144.21409606933594 and 0.009491532109677792
+Processed image 234/547.5, Loss: 1.4516324996948242
+Regression and Classification loss are 106.17518615722656 and 0.008650645613670349
+Processed image 235/547.5, Loss: 1.0704025030136108
+Regression and Classification loss are 114.21416473388672 and 0.008770291693508625
+Processed image 236/547.5, Loss: 1.1509119272232056
+Regression and Classification loss are 34.64134216308594 and 0.009840603917837143
+Processed image 237/547.5, Loss: 0.3562540113925934
+Regression and Classification loss are 279.6038818359375 and 0.008893197402358055
+Processed image 238/547.5, Loss: 2.804932117462158
+Regression and Classification loss are 20.09233283996582 and 0.008010989055037498
+Processed image 239/547.5, Loss: 0.20893430709838867
+Regression and Classification loss are 170.0780792236328 and 0.007066667079925537
+Processed image 240/547.5, Loss: 1.7078473567962646
+Regression and Classification loss are 87.10821533203125 and 0.009563121944665909
+Processed image 241/547.5, Loss: 0.8806452751159668
+Regression and Classification loss are 37.26531219482422 and 0.011736921034753323
+Processed image 242/547.5, Loss: 0.38439005613327026
+Regression and Classification loss are 175.43240356445312 and 0.008463814854621887
+Processed image 243/547.5, Loss: 1.7627878189086914
+Regression and Classification loss are 32.466121673583984 and 0.009075131267309189
+Processed image 244/547.5, Loss: 0.3337363302707672
+Regression and Classification loss are 6.6979899406433105 and 0.009693226777017117
+Processed image 245/547.5, Loss: 0.07667312771081924
+Regression and Classification loss are 36.55390930175781 and 0.00879756361246109
+Processed image 246/547.5, Loss: 0.3743366301059723
+Regression and Classification loss are 24.438711166381836 and 0.011103946715593338
+Processed image 247/547.5, Loss: 0.2554910480976105
+Regression and Classification loss are 191.712158203125 and 0.007864540442824364
+Processed image 248/547.5, Loss: 1.9249861240386963
+Regression and Classification loss are 26.812088012695312 and 0.008477895520627499
+Processed image 249/547.5, Loss: 0.2765987813472748
+Regression and Classification loss are 181.78811645507812 and 0.009746134281158447
+Processed image 250/547.5, Loss: 1.827627182006836
+Regression and Classification loss are 498.4667663574219 and 0.0076649365946650505
+Processed image 251/547.5, Loss: 4.992332935333252
+Regression and Classification loss are 335.33990478515625 and 0.010631192475557327
+Processed image 252/547.5, Loss: 3.364030122756958
+Regression and Classification loss are 32.44493865966797 and 0.011316051706671715
+Processed image 253/547.5, Loss: 0.33576545119285583
+Regression and Classification loss are 15.53101921081543 and 0.008826886303722858
+Processed image 254/547.5, Loss: 0.164137065410614
+Regression and Classification loss are 85.81013488769531 and 0.012669377028942108
+Processed image 255/547.5, Loss: 0.8707706928253174
+Regression and Classification loss are 339.9438171386719 and 0.010132746770977974
+Processed image 256/547.5, Loss: 3.4095709323883057
+Regression and Classification loss are 25.854215621948242 and 0.011313486844301224
+Processed image 257/547.5, Loss: 0.26985564827919006
+Regression and Classification loss are 58.68086242675781 and 0.013837547972798347
+Processed image 258/547.5, Loss: 0.6006461977958679
+Regression and Classification loss are 314.3696594238281 and 0.008969804272055626
+Processed image 259/547.5, Loss: 3.1526663303375244
+Regression and Classification loss are 42.61220169067383 and 0.010818108916282654
+Processed image 260/547.5, Loss: 0.43694013357162476
+Regression and Classification loss are 43.823707580566406 and 0.008880079723894596
+Processed image 261/547.5, Loss: 0.4471171498298645
+Regression and Classification loss are 180.53855895996094 and 0.009682532399892807
+Processed image 262/547.5, Loss: 1.8150681257247925
+Regression and Classification loss are 29.304122924804688 and 0.009094263426959515
+Processed image 263/547.5, Loss: 0.30213549733161926
+Regression and Classification loss are 16.45475196838379 and 0.006554454565048218
+Processed image 264/547.5, Loss: 0.17110197246074677
+Regression and Classification loss are 59.94655990600586 and 0.018956178799271584
+Processed image 265/547.5, Loss: 0.6184217929840088
+Regression and Classification loss are 94.15645599365234 and 0.02102692611515522
+Processed image 266/547.5, Loss: 0.9625914692878723
+Regression and Classification loss are 244.40472412109375 and 0.017283599823713303
+Processed image 267/547.5, Loss: 2.4613308906555176
+Regression and Classification loss are 4.178476810455322 and 0.008620617911219597
+Processed image 268/547.5, Loss: 0.05040538311004639
+Regression and Classification loss are 236.61083984375 and 0.009300227276980877
+Processed image 269/547.5, Loss: 2.37540864944458
+Regression and Classification loss are 404.8857421875 and 0.0055356877855956554
+Processed image 270/547.5, Loss: 4.0543928146362305
+Regression and Classification loss are 192.29913330078125 and 0.007706524804234505
+Processed image 271/547.5, Loss: 1.9306977987289429
+Regression and Classification loss are 7.94326114654541 and 0.010151494294404984
+Processed image 272/547.5, Loss: 0.0895840972661972
+Regression and Classification loss are 10.202672004699707 and 0.010263806208968163
+Processed image 273/547.5, Loss: 0.11229052394628525
+Regression and Classification loss are 174.55201721191406 and 0.007850635796785355
+Processed image 274/547.5, Loss: 1.753370761871338
+Regression and Classification loss are 155.80075073242188 and 0.01000275183469057
+Processed image 275/547.5, Loss: 1.5680102109909058
+Regression and Classification loss are 11.65686321258545 and 0.006143912207335234
+Processed image 276/547.5, Loss: 0.12271254509687424
+Regression and Classification loss are 5.791051387786865 and 0.009963036514818668
+Processed image 277/547.5, Loss: 0.06787355244159698
+Regression and Classification loss are 10.228791236877441 and 0.008613298647105694
+Processed image 278/547.5, Loss: 0.11090120673179626
+Regression and Classification loss are 248.6951141357422 and 0.004365893080830574
+Processed image 279/547.5, Loss: 2.4913170337677
+Regression and Classification loss are 77.16492462158203 and 0.007248805835843086
+Processed image 280/547.5, Loss: 0.7788980603218079
+Regression and Classification loss are 7.755736351013184 and 0.008111592382192612
+Processed image 281/547.5, Loss: 0.08566895127296448
+Regression and Classification loss are 431.6242370605469 and 0.004778328351676464
+Processed image 282/547.5, Loss: 4.321020603179932
+Regression and Classification loss are 62.18720245361328 and 0.00777228269726038
+Processed image 283/547.5, Loss: 0.6296442747116089
+Regression and Classification loss are 7.860191822052002 and 0.006411227863281965
+Processed image 284/547.5, Loss: 0.08501314371824265
+Regression and Classification loss are 18.624845504760742 and 0.007054363377392292
+Processed image 285/547.5, Loss: 0.19330281019210815
+Regression and Classification loss are 77.90874481201172 and 0.006127933971583843
+Processed image 286/547.5, Loss: 0.7852153778076172
+Regression and Classification loss are 20.967044830322266 and 0.008146571926772594
+Processed image 287/547.5, Loss: 0.2178170084953308
+Regression and Classification loss are 32.06700134277344 and 0.010153822600841522
+Processed image 288/547.5, Loss: 0.3308238387107849
+Regression and Classification loss are 10.138224601745605 and 0.006371208466589451
+Processed image 289/547.5, Loss: 0.1077534481883049
+Regression and Classification loss are 78.83515167236328 and 0.00691939564421773
+Processed image 290/547.5, Loss: 0.7952708601951599
+Regression and Classification loss are 52.15222930908203 and 0.006357335019856691
+Processed image 291/547.5, Loss: 0.5278795957565308
+Regression and Classification loss are 60.74983215332031 and 0.004716465715318918
+Processed image 292/547.5, Loss: 0.6122147440910339
+Regression and Classification loss are 256.08154296875 and 0.007010051514953375
+Processed image 293/547.5, Loss: 2.5678253173828125
+Regression and Classification loss are 65.48621368408203 and 0.007358084432780743
+Processed image 294/547.5, Loss: 0.6622201800346375
+Regression and Classification loss are 14.286806106567383 and 0.008550039492547512
+Processed image 295/547.5, Loss: 0.15141808986663818
+Regression and Classification loss are 84.50394439697266 and 0.009020449593663216
+Processed image 296/547.5, Loss: 0.8540598750114441
+Regression and Classification loss are 47.48941421508789 and 0.007506242953240871
+Processed image 297/547.5, Loss: 0.48240038752555847
+Regression and Classification loss are 7.208326816558838 and 0.010995607823133469
+Processed image 298/547.5, Loss: 0.08307887613773346
+Regression and Classification loss are 39.2076530456543 and 0.007203590124845505
+Processed image 299/547.5, Loss: 0.3992801010608673
+Regression and Classification loss are 27.45561981201172 and 0.010239248163998127
+Processed image 300/547.5, Loss: 0.2847954332828522
+Regression and Classification loss are 173.11451721191406 and 0.007957527413964272
+Processed image 301/547.5, Loss: 1.7391027212142944
+Regression and Classification loss are 29.930871963500977 and 0.007870513014495373
+Processed image 302/547.5, Loss: 0.3071792423725128
+Regression and Classification loss are 11.672761917114258 and 0.005163548514246941
+Processed image 303/547.5, Loss: 0.12189116328954697
+Regression and Classification loss are 219.52076721191406 and 0.004552834667265415
+Processed image 304/547.5, Loss: 2.1997604370117188
+Regression and Classification loss are 43.57158279418945 and 0.00684549193829298
+Processed image 305/547.5, Loss: 0.4425613284111023
+Regression and Classification loss are 11.959653854370117 and 0.007939116097986698
+Processed image 306/547.5, Loss: 0.1275356560945511
+Regression and Classification loss are 54.38166427612305 and 0.008579671382904053
+Processed image 307/547.5, Loss: 0.552396297454834
+Regression and Classification loss are 62.76025390625 and 0.006490966770797968
+Processed image 308/547.5, Loss: 0.6340934634208679
+Regression and Classification loss are 43.75913619995117 and 0.0072848377749323845
+Processed image 309/547.5, Loss: 0.44487619400024414
+Regression and Classification loss are 212.54026794433594 and 0.0069546145386993885
+Processed image 310/547.5, Loss: 2.132357358932495
+Regression and Classification loss are 8.621240615844727 and 0.01011011190712452
+Processed image 311/547.5, Loss: 0.09632251411676407
+Regression and Classification loss are 9.517151832580566 and 0.006280085071921349
+Processed image 312/547.5, Loss: 0.10145160555839539
+Regression and Classification loss are 417.42388916015625 and 0.007252116221934557
+Processed image 313/547.5, Loss: 4.181490898132324
+Regression and Classification loss are 185.51324462890625 and 0.007739022374153137
+Processed image 314/547.5, Loss: 1.862871527671814
+Regression and Classification loss are 102.22650909423828 and 0.006601275876164436
+Processed image 315/547.5, Loss: 1.0288664102554321
+Regression and Classification loss are 4.766895294189453 and 0.004976638127118349
+Processed image 316/547.5, Loss: 0.05264559015631676
+Regression and Classification loss are 38.283103942871094 and 0.006734369322657585
+Processed image 317/547.5, Loss: 0.3895654082298279
+Regression and Classification loss are 10.915088653564453 and 0.009837804362177849
+Processed image 318/547.5, Loss: 0.11898869276046753
+Regression and Classification loss are 256.9062194824219 and 0.008482499048113823
+Processed image 319/547.5, Loss: 2.577544689178467
+Regression and Classification loss are 154.79348754882812 and 0.011013091541826725
+Processed image 320/547.5, Loss: 1.558948040008545
+Regression and Classification loss are 21.13055419921875 and 0.006912027020007372
+Processed image 321/547.5, Loss: 0.21821756660938263
+Regression and Classification loss are 31.308528900146484 and 0.007448965217918158
+Processed image 322/547.5, Loss: 0.32053425908088684
+Regression and Classification loss are 495.5755615234375 and 0.010904745198786259
+Processed image 323/547.5, Loss: 4.966660499572754
+Regression and Classification loss are 192.38204956054688 and 0.010813292115926743
+Processed image 324/547.5, Loss: 1.934633731842041
+Regression and Classification loss are 101.50399017333984 and 0.008354594931006432
+Processed image 325/547.5, Loss: 1.0233944654464722
+Regression and Classification loss are 20.78794288635254 and 0.009271858260035515
+Processed image 326/547.5, Loss: 0.21715128421783447
+Regression and Classification loss are 9.543390274047852 and 0.008501854725182056
+Processed image 327/547.5, Loss: 0.10393575578927994
+Regression and Classification loss are 18.84097671508789 and 0.007673256564885378
+Processed image 328/547.5, Loss: 0.19608302414417267
+Regression and Classification loss are 9.491157531738281 and 0.009402179159224033
+Processed image 329/547.5, Loss: 0.10431375354528427
+Regression and Classification loss are 2.729548454284668 and 0.008691268041729927
+Processed image 330/547.5, Loss: 0.035986751317977905
+Regression and Classification loss are 140.45005798339844 and 0.007688417565077543
+Processed image 331/547.5, Loss: 1.41218900680542
+Regression and Classification loss are 18.82931137084961 and 0.010651078075170517
+Processed image 332/547.5, Loss: 0.19894419610500336
+Regression and Classification loss are 17.454504013061523 and 0.00864437036216259
+Processed image 333/547.5, Loss: 0.18318940699100494
+Regression and Classification loss are 17.371959686279297 and 0.007805952336639166
+Processed image 334/547.5, Loss: 0.1815255582332611
+Regression and Classification loss are 14.90283203125 and 0.008205250836908817
+Processed image 335/547.5, Loss: 0.1572335660457611
+Regression and Classification loss are 92.9923095703125 and 0.007402438670396805
+Processed image 336/547.5, Loss: 0.9373254776000977
+Regression and Classification loss are 89.29934692382812 and 0.008846958167850971
+Processed image 337/547.5, Loss: 0.9018403887748718
+Regression and Classification loss are 22.93602752685547 and 0.008463496342301369
+Processed image 338/547.5, Loss: 0.23782376945018768
+Regression and Classification loss are 24.27992820739746 and 0.009602478705346584
+Processed image 339/547.5, Loss: 0.25240176916122437
+Regression and Classification loss are 4.802616119384766 and 0.007310179993510246
+Processed image 340/547.5, Loss: 0.05533634126186371
+Regression and Classification loss are 495.0970764160156 and 0.010632172226905823
+Processed image 341/547.5, Loss: 4.961602687835693
+Regression and Classification loss are 43.3677864074707 and 0.008367172442376614
+Processed image 342/547.5, Loss: 0.44204503297805786
+Regression and Classification loss are 170.49305725097656 and 0.010343708097934723
+Processed image 343/547.5, Loss: 1.7152742147445679
+Regression and Classification loss are 35.29605484008789 and 0.00877402164041996
+Processed image 344/547.5, Loss: 0.361734539270401
+Regression and Classification loss are 370.10223388671875 and 0.009483459405601025
+Processed image 345/547.5, Loss: 3.710505723953247
+Regression and Classification loss are 497.64276123046875 and 0.010124864056706429
+Processed image 346/547.5, Loss: 4.9865522384643555
+Regression and Classification loss are 43.71693420410156 and 0.008140846155583858
+Processed image 347/547.5, Loss: 0.44531017541885376
+Regression and Classification loss are 15.991958618164062 and 0.009461602196097374
+Processed image 348/547.5, Loss: 0.16938118636608124
+Regression and Classification loss are 484.94537353515625 and 0.010978631675243378
+Processed image 349/547.5, Loss: 4.860432147979736
+Regression and Classification loss are 254.02450561523438 and 0.010282407514750957
+Processed image 350/547.5, Loss: 2.550527572631836
+Regression and Classification loss are 198.76768493652344 and 0.01015319675207138
+Processed image 351/547.5, Loss: 1.9978300333023071
+Regression and Classification loss are 105.17915344238281 and 0.00981102790683508
+Processed image 352/547.5, Loss: 1.0616025924682617
+Regression and Classification loss are 18.576618194580078 and 0.009290463291108608
+Processed image 353/547.5, Loss: 0.19505663216114044
+Regression and Classification loss are 8.740108489990234 and 0.009055022150278091
+Processed image 354/547.5, Loss: 0.09645611047744751
+Regression and Classification loss are 92.95921325683594 and 0.01006733812391758
+Processed image 355/547.5, Loss: 0.9396594762802124
+Regression and Classification loss are 35.60679626464844 and 0.012103402987122536
+Processed image 356/547.5, Loss: 0.368171364068985
+Regression and Classification loss are 452.5836181640625 and 0.011259208433330059
+Processed image 357/547.5, Loss: 4.537095069885254
+Regression and Classification loss are 190.9039764404297 and 0.010162858292460442
+Processed image 358/547.5, Loss: 1.9192025661468506
+Regression and Classification loss are 40.45451354980469 and 0.00945720262825489
+Processed image 359/547.5, Loss: 0.41400232911109924
+Regression and Classification loss are 19.02304458618164 and 0.00939204078167677
+Processed image 360/547.5, Loss: 0.1996224820613861
+Regression and Classification loss are 48.558101654052734 and 0.010501023381948471
+Processed image 361/547.5, Loss: 0.49608203768730164
+Regression and Classification loss are 24.520530700683594 and 0.011430004611611366
+Processed image 362/547.5, Loss: 0.25663530826568604
+Regression and Classification loss are 28.02779769897461 and 0.009407339617609978
+Processed image 363/547.5, Loss: 0.28968530893325806
+Regression and Classification loss are 20.531530380249023 and 0.009144279174506664
+Processed image 364/547.5, Loss: 0.21445956826210022
+Regression and Classification loss are 249.88385009765625 and 0.010290691629052162
+Processed image 365/547.5, Loss: 2.509129047393799
+Regression and Classification loss are 12.06718635559082 and 0.009589524939656258
+Processed image 366/547.5, Loss: 0.1302613914012909
+Regression and Classification loss are 38.76973342895508 and 0.008488485589623451
+Processed image 367/547.5, Loss: 0.39618581533432007
+Regression and Classification loss are 214.53921508789062 and 0.010927056893706322
+Processed image 368/547.5, Loss: 2.1563191413879395
+Regression and Classification loss are 105.212890625 and 0.009416576474905014
+Processed image 369/547.5, Loss: 1.061545491218567
+Regression and Classification loss are 29.855350494384766 and 0.009674478322267532
+Processed image 370/547.5, Loss: 0.3082279860973358
+Regression and Classification loss are 32.983306884765625 and 0.009137747809290886
+Processed image 371/547.5, Loss: 0.338970810174942
+Regression and Classification loss are 253.08206176757812 and 0.00801943987607956
+Processed image 372/547.5, Loss: 2.5388400554656982
+Regression and Classification loss are 75.49185180664062 and 0.011199187487363815
+Processed image 373/547.5, Loss: 0.7661176919937134
+Regression and Classification loss are 127.01289367675781 and 0.007948819547891617
+Processed image 374/547.5, Loss: 1.2780778408050537
+Regression and Classification loss are 88.15729522705078 and 0.00895975437015295
+Processed image 375/547.5, Loss: 0.8905327320098877
+Regression and Classification loss are 15.942554473876953 and 0.009686475619673729
+Processed image 376/547.5, Loss: 0.16911201179027557
+Regression and Classification loss are 337.7158203125 and 0.010953851044178009
+Processed image 377/547.5, Loss: 3.3881120681762695
+Regression and Classification loss are 197.37139892578125 and 0.009441649541258812
+Processed image 378/547.5, Loss: 1.983155608177185
+Regression and Classification loss are 10.05760383605957 and 0.00910981371998787
+Processed image 379/547.5, Loss: 0.10968585312366486
+Regression and Classification loss are 13.151670455932617 and 0.010818046517670155
+Processed image 380/547.5, Loss: 0.1423347443342209
+Regression and Classification loss are 13.149866104125977 and 0.01069706492125988
+Processed image 381/547.5, Loss: 0.14219573140144348
+Regression and Classification loss are 5.004992961883545 and 0.010017141699790955
+Processed image 382/547.5, Loss: 0.060067068785429
+Regression and Classification loss are 73.43692779541016 and 0.008618648163974285
+Processed image 383/547.5, Loss: 0.7429879307746887
+Regression and Classification loss are 172.6257781982422 and 0.010407243855297565
+Processed image 384/547.5, Loss: 1.7366650104522705
+Regression and Classification loss are 35.275230407714844 and 0.009315090253949165
+Processed image 385/547.5, Loss: 0.36206740140914917
+Regression and Classification loss are 37.03569412231445 and 0.010823838412761688
+Processed image 386/547.5, Loss: 0.3811807930469513
+Regression and Classification loss are 13.820232391357422 and 0.009946146979928017
+Processed image 387/547.5, Loss: 0.14814847707748413
+Regression and Classification loss are 110.74423217773438 and 0.008625578135251999
+Processed image 388/547.5, Loss: 1.116067886352539
+Regression and Classification loss are 118.8696060180664 and 0.009089069440960884
+Processed image 389/547.5, Loss: 1.1977851390838623
+Regression and Classification loss are 499.2724609375 and 0.010718691162765026
+Processed image 390/547.5, Loss: 5.003443241119385
+Regression and Classification loss are 119.4000473022461 and 0.009870845824480057
+Processed image 391/547.5, Loss: 1.2038713693618774
+Regression and Classification loss are 7.636936187744141 and 0.011216191574931145
+Processed image 392/547.5, Loss: 0.08758555352687836
+Regression and Classification loss are 15.438252449035645 and 0.010715601034462452
+Processed image 393/547.5, Loss: 0.1650981307029724
+Regression and Classification loss are 247.27708435058594 and 0.011070523411035538
+Processed image 394/547.5, Loss: 2.4838411808013916
+Regression and Classification loss are 299.7999267578125 and 0.01001233235001564
+Processed image 395/547.5, Loss: 3.00801157951355
+Regression and Classification loss are 4.874126434326172 and 0.010047148913145065
+Processed image 396/547.5, Loss: 0.05878841131925583
+Regression and Classification loss are 443.6806640625 and 0.009419148787856102
+Processed image 397/547.5, Loss: 4.446225643157959
+Regression and Classification loss are 14.694587707519531 and 0.011519063264131546
+Processed image 398/547.5, Loss: 0.1584649384021759
+Regression and Classification loss are 22.458168029785156 and 0.010769177228212357
+Processed image 399/547.5, Loss: 0.2353508472442627
+Regression and Classification loss are 8.871264457702637 and 0.008059211075305939
+Processed image 400/547.5, Loss: 0.09677185118198395
+Regression and Classification loss are 494.97882080078125 and 0.008806286379694939
+Processed image 401/547.5, Loss: 4.95859432220459
+Regression and Classification loss are 307.7115783691406 and 0.009846684522926807
+Processed image 402/547.5, Loss: 3.0869624614715576
+Regression and Classification loss are 173.52049255371094 and 0.010579070076346397
+Processed image 403/547.5, Loss: 1.745784044265747
+Regression and Classification loss are 17.20030403137207 and 0.010403020307421684
+Processed image 404/547.5, Loss: 0.18240605294704437
+Regression and Classification loss are 4.082066535949707 and 0.010311255231499672
+Processed image 405/547.5, Loss: 0.05113191902637482
+Regression and Classification loss are 37.13164138793945 and 0.010033205151557922
+Processed image 406/547.5, Loss: 0.3813496232032776
+Regression and Classification loss are 12.352389335632324 and 0.009523707441985607
+Processed image 407/547.5, Loss: 0.13304759562015533
+Regression and Classification loss are 6.180072784423828 and 0.010059779509902
+Processed image 408/547.5, Loss: 0.07186050713062286
+Regression and Classification loss are 12.74425983428955 and 0.009268758818507195
+Processed image 409/547.5, Loss: 0.13671135902404785
+Regression and Classification loss are 31.982221603393555 and 0.01575852371752262
+Processed image 410/547.5, Loss: 0.3355807363986969
+Regression and Classification loss are 9.973647117614746 and 0.009340540505945683
+Processed image 411/547.5, Loss: 0.10907700657844543
+Regression and Classification loss are 35.30827331542969 and 0.009636318311095238
+Processed image 412/547.5, Loss: 0.36271902918815613
+Regression and Classification loss are 8.233393669128418 and 0.008571162819862366
+Processed image 413/547.5, Loss: 0.090905100107193
+Regression and Classification loss are 41.81895446777344 and 0.009732631966471672
+Processed image 414/547.5, Loss: 0.42792215943336487
+Regression and Classification loss are 33.296566009521484 and 0.00695143174380064
+Processed image 415/547.5, Loss: 0.33991706371307373
+Regression and Classification loss are 18.031797409057617 and 0.009717590175569057
+Processed image 416/547.5, Loss: 0.19003555178642273
+Regression and Classification loss are 77.62234497070312 and 0.008951818570494652
+Processed image 417/547.5, Loss: 0.7851752638816833
+Regression and Classification loss are 17.334333419799805 and 0.008066913112998009
+Processed image 418/547.5, Loss: 0.18141023814678192
+Regression and Classification loss are 93.02539825439453 and 0.007728219032287598
+Processed image 419/547.5, Loss: 0.9379822015762329
+Regression and Classification loss are 35.50728225708008 and 0.009367858991026878
+Processed image 420/547.5, Loss: 0.3644406795501709
+Regression and Classification loss are 23.864253997802734 and 0.011481472291052341
+Processed image 421/547.5, Loss: 0.2501240074634552
+Regression and Classification loss are 385.0019226074219 and 0.008080755360424519
+Processed image 422/547.5, Loss: 3.858099937438965
+Regression and Classification loss are 30.66204071044922 and 0.008700006641447544
+Processed image 423/547.5, Loss: 0.3153204023838043
+Regression and Classification loss are 40.43838882446289 and 0.008959317579865456
+Processed image 424/547.5, Loss: 0.4133431911468506
+Regression and Classification loss are 33.149383544921875 and 0.010852029547095299
+Processed image 425/547.5, Loss: 0.34234586358070374
+Regression and Classification loss are 99.98426818847656 and 0.00897238776087761
+Processed image 426/547.5, Loss: 1.008815050125122
