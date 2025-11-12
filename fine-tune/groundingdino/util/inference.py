@@ -1,4 +1,4 @@
-from typing import Tuple, List
+from typing import Tuple, List, Optional, Union
 
 import cv2
 import numpy as np
@@ -9,6 +9,7 @@ from torchvision.ops import box_convert
 from torchvision.ops import box_iou
 import torch.nn.functional as F
 import bisect
+import warnings
 
 import groundingdino.datasets.transforms as T
 from groundingdino.models import build_model
@@ -29,9 +30,74 @@ def preprocess_caption(caption: str) -> str:
     return result + "."
 
 
-def load_model(model_config_path: str, model_checkpoint_path: str, device: str = "cuda",strict: bool =False):
+MIN_CUDA_CAPABILITY = (3, 7)
+
+
+def _normalize_device(device: Optional[Union[str, torch.device]]) -> str:
+    if device is None:
+        return "cpu"
+    if isinstance(device, torch.device):
+        if device.type == "cuda" and device.index is not None:
+            return f"cuda:{device.index}"
+        return device.type
+    return device
+
+
+def _device_index(device: str) -> Optional[int]:
+    if not device.startswith("cuda"):
+        return None
+    if ":" in device:
+        try:
+            return int(device.split(":", 1)[1])
+        except ValueError:
+            return None
+    if torch.cuda.is_available():
+        try:
+            return torch.cuda.current_device()
+        except Exception:
+            return None
+    return None
+
+
+def _resolve_device(device: Optional[Union[str, torch.device]]) -> str:
+    requested_device = _normalize_device(device)
+
+    if requested_device.startswith("cuda"):
+        if not torch.cuda.is_available():
+            warnings.warn(
+                "CUDA requested but not available. Falling back to CPU execution.",
+                RuntimeWarning,
+            )
+            return "cpu"
+
+        index = _device_index(requested_device) or 0
+        try:
+            major, minor = torch.cuda.get_device_capability(index)
+        except RuntimeError:
+            warnings.warn(
+                "Unable to query CUDA device capability. Falling back to CPU execution.",
+                RuntimeWarning,
+            )
+            return "cpu"
+
+        if (major, minor) < MIN_CUDA_CAPABILITY:
+            warnings.warn(
+                (
+                    "The selected CUDA device has compute capability %d.%d, "
+                    "but at least %d.%d is required. Falling back to CPU execution."
+                )
+                % (major, minor, *MIN_CUDA_CAPABILITY),
+                RuntimeWarning,
+            )
+            return "cpu"
+
+    return requested_device
+
+
+def load_model(model_config_path: str, model_checkpoint_path: str, device: str = "cuda", strict: bool = False):
+    resolved_device = _resolve_device(device)
     args = SLConfig.fromfile(model_config_path)
-    args.device = device
+    args.device = resolved_device
     model = build_model(args)
     checkpoint = torch.load(model_checkpoint_path, map_location="cpu")
     if "model" in checkpoint.keys():
@@ -40,6 +106,7 @@ def load_model(model_config_path: str, model_checkpoint_path: str, device: str =
         # The state dict is the checkpoint
         model.load_state_dict(clean_state_dict(checkpoint), strict=True)
     model.eval()
+    model = model.to(resolved_device)
     return model
 
 
@@ -64,16 +131,31 @@ def predict(
         caption: str,
         box_threshold: float,
         text_threshold: float,
-        device: str = "cuda",
+        device: Optional[Union[str, torch.device]] = "cuda",
         remove_combined: bool = False
 ) -> Tuple[torch.Tensor, torch.Tensor, List[str]]:
     caption = preprocess_caption(caption=caption)
 
-    model = model.to(device)
-    image = image.to(device)
+    resolved_device = _resolve_device(device)
+
+    model = model.to(resolved_device)
+    image = image.to(resolved_device)
 
     with torch.no_grad():
-        outputs = model(image[None], captions=[caption])
+        try:
+            outputs = model(image[None], captions=[caption])
+        except RuntimeError as err:
+            if resolved_device.startswith("cuda") and "no kernel image" in str(err).lower():
+                warnings.warn(
+                    "Encountered CUDA kernel error during inference. Retrying on CPU.",
+                    RuntimeWarning,
+                )
+                resolved_device = "cpu"
+                model = model.to(resolved_device)
+                image = image.to(resolved_device)
+                outputs = model(image[None], captions=[caption])
+            else:
+                raise
 
     prediction_logits = outputs["pred_logits"].cpu().sigmoid()[0]  # prediction_logits.shape = (nq, 256)
     prediction_boxes = outputs["pred_boxes"].cpu()[0]  # prediction_boxes.shape = (nq, 4)
@@ -139,8 +221,8 @@ class Model:
             model_config_path=model_config_path,
             model_checkpoint_path=model_checkpoint_path,
             device=device
-        ).to(device)
-        self.device = device
+        )
+        self.device = next(self.model.parameters()).device
 
     def predict_with_caption(
         self,
