@@ -24,6 +24,9 @@ def apply_nms_per_phrase(image_source, boxes, logits, phrases, threshold=0.3):
         nms_logits_list.extend(phrase_logits[keep_indices])
         nms_phrases_list.extend([unique_phrase] * len(keep_indices))
 
+    if not nms_boxes_list:
+        return boxes, logits, phrases
+
     return torch.stack(nms_boxes_list), torch.stack(nms_logits_list), nms_phrases_list
 
 
