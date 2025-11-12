@@ -57,5 +57,7 @@ def process_image(
 
 if __name__ == "__main__":
     #model_weights="weights/groundingdino_swint_ogc.pth"
-    model_weights="weights/model_weights2000.pth"
-    process_image(model_weights=model_weights)
+    model_weights="weights/model_weights0_12.5.pth"
+    img_path = "/home/abeer/roboflow/train/ministrey_zone_2_Flight_01_01941_JPG.rf.f6dd851625ce27434b3ae9087aed4767.jpg"
+    prompt = "bus.car.truck.pickup-truck.van"
+    process_image(model_weights=model_weights,image_path=img_path,text_prompt = prompt)
