@@ -1,5 +1,7 @@
 from groundingdino.util.inference import load_model, load_image, predict, annotate
 import cv2
+import json
+from pathlib import Path
 import torch
 import torchvision.ops as ops
 from torchvision.ops import box_convert
@@ -30,13 +32,72 @@ def apply_nms_per_phrase(image_source, boxes, logits, phrases, threshold=0.3):
     return torch.stack(nms_boxes_list), torch.stack(nms_logits_list), nms_phrases_list
 
 
+def create_coco_annotations(boxes, logits, phrases, image_source, image_path):
+    image_height, image_width = image_source.shape[:2]
+
+    try:
+        image_id = int(Path(image_path).stem)
+    except ValueError:
+        image_id = Path(image_path).stem
+
+    images = [{
+        "id": image_id,
+        "file_name": Path(image_path).name,
+        "width": image_width,
+        "height": image_height,
+    }]
+
+    categories = []
+    category_mapping = {}
+    annotations = []
+
+    annotation_id = 1
+
+    if boxes.is_cuda:
+        boxes = boxes.cpu()
+    if logits.is_cuda:
+        logits = logits.cpu()
+
+    for box, logit, phrase in zip(boxes.tolist(), logits.tolist(), phrases):
+        if phrase not in category_mapping:
+            category_id = len(category_mapping) + 1
+            category_mapping[phrase] = category_id
+            categories.append({"id": category_id, "name": phrase})
+        else:
+            category_id = category_mapping[phrase]
+
+        x_center, y_center, width_rel, height_rel = box
+        x = (x_center - width_rel / 2) * image_width
+        y = (y_center - height_rel / 2) * image_height
+        width = width_rel * image_width
+        height = height_rel * image_height
+
+        annotations.append({
+            "id": annotation_id,
+            "image_id": image_id,
+            "category_id": category_id,
+            "bbox": [x, y, width, height],
+            "area": width * height,
+            "score": float(logit),
+            "iscrowd": 0,
+        })
+        annotation_id += 1
+
+    return {
+        "images": images,
+        "annotations": annotations,
+        "categories": categories,
+    }
+
+
 def process_image(
         model_config="groundingdino/config/GroundingDINO_SwinT_OGC.py",
         model_weights="weights/groundingdino_swint_ogc.pth",
         image_path="test_pepper.jpg",
         text_prompt="peduncle.fruit.",
         box_threshold=0.8,
-        text_threshold=0.40
+        text_threshold=0.40,
+        output_json_path="predictions.json"
 ):
     model = load_model(model_config, model_weights)
     #model.load_state_dict(torch.load(state_dict_path))
@@ -56,6 +117,11 @@ def process_image(
 
     annotated_frame = annotate(image_source=image_source, boxes=boxes, logits=logits, phrases=phrases)
     cv2.imwrite("result.jpg", annotated_frame)
+
+    coco_output = create_coco_annotations(boxes, logits, phrases, image_source, image_path)
+
+    with open(output_json_path, "w", encoding="utf-8") as json_file:
+        json.dump(coco_output, json_file, ensure_ascii=False, indent=2)
 
 
 if __name__ == "__main__":
