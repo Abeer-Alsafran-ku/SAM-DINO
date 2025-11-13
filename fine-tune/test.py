@@ -1,11 +1,11 @@
 from groundingdino.util.inference import load_model, load_image, predict, annotate
-import cv2
+# import cv2
 import json
 from pathlib import Path
 import torch
 import torchvision.ops as ops
 from torchvision.ops import box_convert
-
+import os
 
 def apply_nms_per_phrase(image_source, boxes, logits, phrases, threshold=0.3):
     h, w, _ = image_source.shape
@@ -35,20 +35,24 @@ def apply_nms_per_phrase(image_source, boxes, logits, phrases, threshold=0.3):
 def create_coco_annotations(boxes, logits, phrases, image_source, image_path):
     image_height, image_width = image_source.shape[:2]
 
-    try:
-        image_id = int(Path(image_path).stem)
-    except ValueError:
-        image_id = Path(image_path).stem
+    image_id = 1  
 
     images = [{
         "id": image_id,
-        "file_name": Path(image_path).name,
+        "file_name":image_path,
         "width": image_width,
         "height": image_height,
     }]
+    image_id += 1
 
     categories = []
-    category_mapping = {}
+    category_mapping = {
+        'bus' : 1,
+        'car' : 2,
+        'truck' : 3,
+        'pickup-truck' : 4,
+        'van' : 5
+    }
     annotations = []
 
     annotation_id = 1
@@ -93,42 +97,53 @@ def create_coco_annotations(boxes, logits, phrases, image_source, image_path):
 def process_image(
         model_config="groundingdino/config/GroundingDINO_SwinT_OGC.py",
         model_weights="weights/groundingdino_swint_ogc.pth",
-        image_path="multimodal-data/test_images/test_pepper.jpg",
+        image_path="/home/abeer/roboflow/test",
         text_prompt="peduncle.fruit.",
-
+        output_json_path="output_annotations.json",
         box_threshold=0.25,
         text_threshold=0.2
 
 ):
-    model = load_model(model_config, model_weights)
-    #model.load_state_dict(torch.load(state_dict_path))
-    image_source, image = load_image(image_path)
+    
+    # loop over all images in a directory
+    for image in os.listdir(image_path):
+        if image.lower().endswith(('.png', '.jpg', '.jpeg', '.bmp', '.tiff')):
+            print(f"Processing image: {os.path.join(image_path, image)}")
+            model = load_model(model_config, model_weights)
+            #model.load_state_dict(torch.load(state_dict_path))
+            image_source, image = load_image(os.path.join(image_path, image))
+            boxes, logits, phrases = predict(
+                model=model,
+                image=image,
+                caption=text_prompt,
+                # device='cuda' if torch.cuda.is_available() else 'cpu',
+                box_threshold=box_threshold,
+                text_threshold=text_threshold
+            )
 
-    boxes, logits, phrases = predict(
-        model=model,
-        image=image,
-        caption=text_prompt,
-        box_threshold=box_threshold,
-        text_threshold=text_threshold
-    )
+            # print(f"Original boxes size {boxes}")
+            boxes, logits, phrases = apply_nms_per_phrase(image_source, boxes, logits, phrases)
+            for phrase in phrases:
+                phrase_new  = phrase.split(' ')[0]
+                if phrase_new == 'pickup':
+                    phrase_new = 'pickup-truck'
+                phrases[phrases.index(phrase)] = phrase_new
+            # print(f"Phrases: {phrases}")
+            
+            # annotated_frame = annotate(image_source=image_source, boxes=boxes, logits=logits, phrases=phrases)
+            # cv2.imwrite("result.jpg", annotated_frame)
 
-    print(f"Original boxes size {boxes.shape}")
-    boxes, logits, phrases = apply_nms_per_phrase(image_source, boxes, logits, phrases)
-    print(f"NMS boxes size {boxes.shape}")
+            coco_output = create_coco_annotations(boxes, logits, phrases, image_source, image)
 
-    annotated_frame = annotate(image_source=image_source, boxes=boxes, logits=logits, phrases=phrases)
-    cv2.imwrite("result.jpg", annotated_frame)
-
-    coco_output = create_coco_annotations(boxes, logits, phrases, image_source, image_path)
-
-    with open(output_json_path, "w", encoding="utf-8") as json_file:
-        json.dump(coco_output, json_file, ensure_ascii=False, indent=2)
+            with open(output_json_path, "w", encoding="utf-8") as json_file:
+                json.dump(coco_output, json_file, ensure_ascii=False, indent=2)
 
 
 if __name__ == "__main__":
     model_weights="weights/groundingdino_swint_ogc.pth"
     model_weights="weights/model_weights0_12.5.pth"
-    img_path = "/home/abeer/roboflow/train/ministrey_zone_2_Flight_01_01941_JPG.rf.f6dd851625ce27434b3ae9087aed4767.jpg"
-    prompt = "bus.car.truck.pickup-truck.van"
-    process_image(model_weights=model_weights,image_path=img_path,text_prompt = prompt)
+    # img_path = "/home/abeer/roboflow/train/ministrey_zone_2_Flight_01_01941_JPG.rf.f6dd851625ce27434b3ae9087aed4767.jpg"
+    prompt = "bus . car . truck . pickup-truck . van"
+
+    process_image(model_weights=model_weights,text_prompt = prompt)
     #process_image(model_weights=model_weights)
