@@ -152,6 +152,11 @@ def evaluate_detections(
     gt_annotations, _ = _group_annotations_by_filename(gt_data)
     pred_annotations, _ = _group_annotations_by_filename(pred_data)
 
+    print(f"Number of ground truth images: {len(gt_annotations)}"
+          f", Number of predicted images: {len(pred_annotations)}"
+          )
+
+    
     common_filenames = sorted(set(gt_annotations) & set(pred_annotations))
     if not common_filenames:
         return 0.0, 0.0, 0.0
