@@ -6,9 +6,19 @@ import csv
 import torch
 from collections import defaultdict
 import torch.optim as optim
+from torch.cuda.amp import GradScaler, autocast
 import json
+
+# Device configuration
+DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f"Using device: {DEVICE}")
+
 # Model
-model = load_model("/home/abeer/aaas/SAM-DINO/fine-tune/groundingdino/config/GroundingDINO_SwinT_OGC.py", "weights/groundingdino_swint_ogc.pth")
+model = load_model(
+    "/home/abeer/aaas/SAM-DINO/fine-tune/groundingdino/config/GroundingDINO_SwinT_OGC.py",
+    "weights/groundingdino_swint_ogc.pth",
+    device=str(DEVICE),
+)
 
 # Dataset paths
 images_files=sorted(os.listdir("/home/abeer/roboflow/train"))
@@ -145,10 +155,12 @@ def read_my_dt(json_path):
 def train(model, ann_file, epochs=1, save_path='weights/model_weights',save_epoch=50):
     # Read Dataset
     ann_Dict = read_my_dt(ann_file)
-    
+
     # Add optimizer
     optimizer = optim.Adam(model.parameters(), lr=1e-5)
-    
+
+    scaler = GradScaler(enabled=DEVICE.type == "cuda")
+
     # Ensure the model is in training mode
     model.train()
 
@@ -164,20 +176,35 @@ def train(model, ann_file, epochs=1, save_path='weights/model_weights',save_epoc
 
             # Zero the gradients
             optimizer.zero_grad()
-            
-            # Call the training function for each image and its annotations
-            loss = train_image(
-                model=model,
-                image_source=image_source,
-                image=image,
-                caption_objects=captions,
-                box_target=bxs,
-            )
-            
-            # Backpropagate and optimize
-            loss.backward()
-            optimizer.step()
-            
+
+            if scaler.is_enabled():
+                with autocast():
+                    loss = train_image(
+                        model=model,
+                        image_source=image_source,
+                        image=image,
+                        caption_objects=captions,
+                        box_target=bxs,
+                        device=str(DEVICE),
+                    )
+                scaler.scale(loss).backward()
+                scaler.step(optimizer)
+                scaler.update()
+            else:
+                # Call the training function for each image and its annotations
+                loss = train_image(
+                    model=model,
+                    image_source=image_source,
+                    image=image,
+                    caption_objects=captions,
+                    box_target=bxs,
+                    device=str(DEVICE),
+                )
+
+                # Backpropagate and optimize
+                loss.backward()
+                optimizer.step()
+
             total_loss += loss.item()  # Accumulate the loss
             print(f"Processed image {idx+1}/{len(ann_Dict)*PERCENT}, Loss: {loss.item()}")
 
