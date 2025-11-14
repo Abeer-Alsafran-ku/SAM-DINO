@@ -119,9 +119,23 @@ def process_image(
     
     coco_output = create_coco_annotations(boxes, logits, phrases, image_source, image_name,image_id)
 
-    with open(output_json_path, "a", encoding="utf-8") as json_file:
-        json_file.extend(coco_output['images'])
-        json_file.extend(coco_output['annotations'])
+    if os.path.exists(output_json_path):
+        with open(output_json_path, "r", encoding="utf-8") as json_file:
+            try:
+                existing_data = json.load(json_file)
+            except json.JSONDecodeError:
+                existing_data = {"images": [], "annotations": []}
+    else:
+        existing_data = {"images": [], "annotations": []}
+
+    existing_data.setdefault("images", [])
+    existing_data.setdefault("annotations", [])
+
+    existing_data["images"].extend(coco_output["images"])
+    existing_data["annotations"].extend(coco_output["annotations"])
+
+    with open(output_json_path, "w", encoding="utf-8") as json_file:
+        json.dump(existing_data, json_file, indent=4)
 
 
 
