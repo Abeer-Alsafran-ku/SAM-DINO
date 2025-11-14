@@ -48,7 +48,8 @@ def create_coco_annotations(boxes, logits, phrases, image_source, image_path, im
         'car' : 2,
         'truck' : 3,
         'pickup-truck' : 4,
-        'van' : 5
+        'van' : 5,
+        '-' : -1,
     }
     annotations = []
 
