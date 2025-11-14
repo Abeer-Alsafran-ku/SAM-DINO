@@ -86,6 +86,43 @@ def create_coco_annotations(boxes, logits, phrases, image_source, image_path, im
         "annotations": annotations,
     }
 
+def create_yolo_annotations(boxes, logits, phrases, image_source, image_name):
+    # image_height, image_width = image_source.shape[:2]
+    
+    output_dir = '/home/abeer/pred'
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
+    yolo_annotations = []
+
+    category_mapping = {
+        'bus' : 0,
+        'car' : 1,
+        'truck' : 2,
+        'pickup-truck' : 3,
+        'van' : 4,
+        '-' : -1,
+    }
+
+    if boxes.is_cuda:
+        boxes = boxes.cpu()
+    if logits.is_cuda:
+        logits = logits.cpu()
+
+    for box, logit, phrase in zip(boxes.tolist(), logits.tolist(), phrases):
+        category_id = category_mapping[phrase]
+        x_center, y_center, width_rel, height_rel = box
+        # x = x_center * image_width
+        # y = y_center * image_height
+        # width = width_rel * image_width
+        # height = height_rel * image_height
+        yolo_annotations.append(f"{category_id} {x_center} {y_center} {width_rel} {height_rel}\n")
+
+    yolo_annotation_path = os.path.splitext(image_name)[0] + ".txt"
+
+    with open(os.path.join(output_dir, yolo_annotation_path), "w") as f:
+        f.writelines(yolo_annotations)
+    return yolo_annotation_path
 
 def process_image(
         model_config="groundingdino/config/GroundingDINO_SwinT_OGC.py",
@@ -95,6 +132,7 @@ def process_image(
         output_json_path="output_annotations.json",
         image_name=None,
         image_id=0,
+        yolo = False,
         box_threshold=0.25,
         text_threshold=0.2
 
@@ -118,25 +156,30 @@ def process_image(
             phrase_new = 'pickup-truck'
         phrases[phrases.index(phrase)] = phrase_new
     
-    coco_output = create_coco_annotations(boxes, logits, phrases, image_source, image_name,image_id)
-
-    if os.path.exists(output_json_path):
-        with open(output_json_path, "r", encoding="utf-8") as json_file:
-            try:
-                existing_data = json.load(json_file)
-            except json.JSONDecodeError:
-                existing_data = {"images": [], "annotations": []}
+    if yolo:
+        print("Generating YOLO Annotations...")
+        yolo_annotation_path = create_yolo_annotations(boxes, logits, phrases, image_source, image_name)
+        print(f"YOLO annotations saved to: {yolo_annotation_path}")
     else:
-        existing_data = {"images": [], "annotations": []}
+        coco_output = create_coco_annotations(boxes, logits, phrases, image_source, image_name,image_id)
 
-    existing_data.setdefault("images", [])
-    existing_data.setdefault("annotations", [])
+        if os.path.exists(output_json_path):
+            with open(output_json_path, "r", encoding="utf-8") as json_file:
+                try:
+                    existing_data = json.load(json_file)
+                except json.JSONDecodeError:
+                    existing_data = {"images": [], "annotations": []}
+        else:
+            existing_data = {"images": [], "annotations": []}
 
-    existing_data["images"].extend(coco_output["images"])
-    existing_data["annotations"].extend(coco_output["annotations"])
+        existing_data.setdefault("images", [])
+        existing_data.setdefault("annotations", [])
 
-    with open(output_json_path, "w", encoding="utf-8") as json_file:
-        json.dump(existing_data, json_file, indent=4)
+        existing_data["images"].extend(coco_output["images"])
+        existing_data["annotations"].extend(coco_output["annotations"])
+
+        with open(output_json_path, "w", encoding="utf-8") as json_file:
+            json.dump(existing_data, json_file, indent=4)
 
 
 
@@ -146,11 +189,13 @@ if __name__ == "__main__":
     # img_path = "/home/abeer/roboflow/train/ministrey_zone_2_Flight_01_01941_JPG.rf.f6dd851625ce27434b3ae9087aed4767.jpg"
     prompt = "bus . car . truck . pickup-truck . van"
     # loop over all images in a directory
-    image_path = "/home/abeer/roboflow/test"
+    # image_path = "/home/abeer/roboflow/test"
+    image_path = "/home/abeer/dataset/test"
+
     i = 0 
     for image_name in os.listdir(image_path):
         if image_name.lower().endswith(('.png', '.jpg', '.jpeg', '.bmp', '.tiff')):
             print(f"Processing image: {os.path.join(image_path, image_name)}")
-            process_image(model_weights=model_weights,text_prompt = prompt,image_name=image_name,image_id=i)
+            process_image(model_weights=model_weights,text_prompt = prompt,image_path=image_path,image_name=image_name,image_id=i,yolo=True)
             i += 1
     
