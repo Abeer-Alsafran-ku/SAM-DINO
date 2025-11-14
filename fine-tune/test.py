@@ -13,7 +13,7 @@ def apply_nms_per_phrase(image_source, boxes, logits, phrases, threshold=0.3):
     scaled_boxes = box_convert(boxes=scaled_boxes, in_fmt="cxcywh", out_fmt="xyxy")
     nms_boxes_list, nms_logits_list, nms_phrases_list = [], [], []
 
-    print(f"The unique detected phrases are {set(phrases)}")
+    # print(f"The unique detected phrases are {set(phrases)}")
 
     for unique_phrase in set(phrases):
         indices = [i for i, phrase in enumerate(phrases) if phrase == unique_phrase]
@@ -32,20 +32,17 @@ def apply_nms_per_phrase(image_source, boxes, logits, phrases, threshold=0.3):
     return torch.stack(nms_boxes_list), torch.stack(nms_logits_list), nms_phrases_list
 
 
-def create_coco_annotations(boxes, logits, phrases, image_source, image_path):
+def create_coco_annotations(boxes, logits, phrases, image_source, image_path, image_id ):
+    
     image_height, image_width = image_source.shape[:2]
-
-    image_id = 1  
-
+    
     images = [{
         "id": image_id,
         "file_name":image_path,
         "width": image_width,
         "height": image_height,
     }]
-    image_id += 1
 
-    categories = []
     category_mapping = {
         'bus' : 1,
         'car' : 2,
@@ -63,12 +60,7 @@ def create_coco_annotations(boxes, logits, phrases, image_source, image_path):
         logits = logits.cpu()
 
     for box, logit, phrase in zip(boxes.tolist(), logits.tolist(), phrases):
-        if phrase not in category_mapping:
-            category_id = len(category_mapping) + 1
-            category_mapping[phrase] = category_id
-            categories.append({"id": category_id, "name": phrase})
-        else:
-            category_id = category_mapping[phrase]
+        category_id = category_mapping[phrase]
 
         x_center, y_center, width_rel, height_rel = box
         x = (x_center - width_rel / 2) * image_width
@@ -86,57 +78,51 @@ def create_coco_annotations(boxes, logits, phrases, image_source, image_path):
             "iscrowd": 0,
         })
         annotation_id += 1
+    
 
     return {
         "images": images,
         "annotations": annotations,
-        "categories": categories,
     }
 
 
 def process_image(
         model_config="groundingdino/config/GroundingDINO_SwinT_OGC.py",
-        model_weights="weights/groundingdino_swint_ogc.pth",
+        model_weights="weights/model_weights0_12.5.pth",
         image_path="/home/abeer/roboflow/test",
-        text_prompt="peduncle.fruit.",
+        text_prompt="bus . car . truck . pickup-truck . van",
         output_json_path="output_annotations.json",
+        image_name=None,
+        image_id=0,
         box_threshold=0.25,
         text_threshold=0.2
 
 ):
+    model = load_model(model_config, model_weights)
+    #model.load_state_dict(torch.load(state_dict_path))
+    image_source, image = load_image(os.path.join(image_path, image_name))
+    boxes, logits, phrases = predict(
+        model=model,
+        image=image,
+        caption=text_prompt,
+        # device='cuda' if torch.cuda.is_available() else 'cpu',
+        box_threshold=box_threshold,
+        text_threshold=text_threshold
+    )
+
+    boxes, logits, phrases = apply_nms_per_phrase(image_source, boxes, logits, phrases)
+    for phrase in phrases:
+        phrase_new  = phrase.split(' ')[0]
+        if phrase_new == 'pickup':
+            phrase_new = 'pickup-truck'
+        phrases[phrases.index(phrase)] = phrase_new
     
-    # loop over all images in a directory
-    for image in os.listdir(image_path):
-        if image.lower().endswith(('.png', '.jpg', '.jpeg', '.bmp', '.tiff')):
-            print(f"Processing image: {os.path.join(image_path, image)}")
-            model = load_model(model_config, model_weights)
-            #model.load_state_dict(torch.load(state_dict_path))
-            image_source, image = load_image(os.path.join(image_path, image))
-            boxes, logits, phrases = predict(
-                model=model,
-                image=image,
-                caption=text_prompt,
-                # device='cuda' if torch.cuda.is_available() else 'cpu',
-                box_threshold=box_threshold,
-                text_threshold=text_threshold
-            )
+    coco_output = create_coco_annotations(boxes, logits, phrases, image_source, image_name,image_id)
 
-            # print(f"Original boxes size {boxes}")
-            boxes, logits, phrases = apply_nms_per_phrase(image_source, boxes, logits, phrases)
-            for phrase in phrases:
-                phrase_new  = phrase.split(' ')[0]
-                if phrase_new == 'pickup':
-                    phrase_new = 'pickup-truck'
-                phrases[phrases.index(phrase)] = phrase_new
-            # print(f"Phrases: {phrases}")
-            
-            # annotated_frame = annotate(image_source=image_source, boxes=boxes, logits=logits, phrases=phrases)
-            # cv2.imwrite("result.jpg", annotated_frame)
+    with open(output_json_path, "a", encoding="utf-8") as json_file:
+        json_file.extend(coco_output['images'])
+        json_file.extend(coco_output['annotations'])
 
-            coco_output = create_coco_annotations(boxes, logits, phrases, image_source, image)
-
-            with open(output_json_path, "w", encoding="utf-8") as json_file:
-                json.dump(coco_output, json_file, ensure_ascii=False, indent=2)
 
 
 if __name__ == "__main__":
@@ -144,6 +130,12 @@ if __name__ == "__main__":
     model_weights="weights/model_weights0_12.5.pth"
     # img_path = "/home/abeer/roboflow/train/ministrey_zone_2_Flight_01_01941_JPG.rf.f6dd851625ce27434b3ae9087aed4767.jpg"
     prompt = "bus . car . truck . pickup-truck . van"
-
-    process_image(model_weights=model_weights,text_prompt = prompt)
-    #process_image(model_weights=model_weights)
+    # loop over all images in a directory
+    image_path = "/home/abeer/roboflow/test"
+    i = 0 
+    for image_name in os.listdir(image_path):
+        if image_name.lower().endswith(('.png', '.jpg', '.jpeg', '.bmp', '.tiff')):
+            print(f"Processing image: {os.path.join(image_path, image_name)}")
+            process_image(model_weights=model_weights,text_prompt = prompt,image_name=image_name,image_id=i)
+            i += 1
+    
