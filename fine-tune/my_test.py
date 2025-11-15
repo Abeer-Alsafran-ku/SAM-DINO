@@ -188,7 +188,7 @@ if __name__ == "__main__":
     model_weights="weights/groundingdino_swint_ogc.pth"
     # model_weights="weights/model_0_100.pth"
     # img_path = "/home/abeer/roboflow/train/ministrey_zone_2_Flight_01_01941_JPG.rf.f6dd851625ce27434b3ae9087aed4767.jpg"
-    prompt = "bus . car . truck . pickup-truck . van"
+    prompt = "bus . car . pickup-truck . truck . van"
     # loop over all images in a directory
     # image_path = "/home/abeer/roboflow/test"
 

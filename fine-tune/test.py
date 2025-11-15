@@ -89,7 +89,7 @@ def create_coco_annotations(boxes, logits, phrases, image_source, image_path, im
 def create_yolo_annotations(boxes, logits, phrases, image_source, image_name):
     # image_height, image_width = image_source.shape[:2]
     
-    output_dir = '/home/abeer/pred2yolo'
+    output_dir = '/home/abeer/pred_model3_100_yolo'
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
@@ -129,7 +129,7 @@ def process_image(
         model_config="groundingdino/config/GroundingDINO_SwinT_OGC.py",
         model_weights="weights/model_weights0_12.5.pth",
         image_path="/home/abeer/roboflow/test",
-        text_prompt="bus . car . truck . pickup-truck . van",
+        text_prompt="bus . car . pickup-truck . truck . van",
         output_json_path="output_annotations.json",
         image_name=None,
         image_id=0,
@@ -186,11 +186,9 @@ def process_image(
 
 if __name__ == "__main__":
     # model_weights="weights/groundingdino_swint_ogc.pth"
-    model_weights="weights/model_0_100.pth"
-    # img_path = "/home/abeer/roboflow/train/ministrey_zone_2_Flight_01_01941_JPG.rf.f6dd851625ce27434b3ae9087aed4767.jpg"
-    prompt = "bus . car . truck . pickup-truck . van"
+    model_weights="/home/abeer/model_3_100.pth"
+    prompt = "bus . car . pickup-truck . truck . van"
     # loop over all images in a directory
-    # image_path = "/home/abeer/roboflow/test"
 
     image_path = '/home/abeer/dataset/test/images'
     print("Starting processing images...")
