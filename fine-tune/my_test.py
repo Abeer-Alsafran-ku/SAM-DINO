@@ -89,7 +89,7 @@ def create_coco_annotations(boxes, logits, phrases, image_source, image_path, im
 def create_yolo_annotations(boxes, logits, phrases, image_source, image_name):
     # image_height, image_width = image_source.shape[:2]
     
-    output_dir = '/home/abeer/pred2yolo'
+    output_dir = '/home/abeer/test_swint_yolo'
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
@@ -185,8 +185,8 @@ def process_image(
 
 
 if __name__ == "__main__":
-    # model_weights="weights/groundingdino_swint_ogc.pth"
-    model_weights="weights/model_0_100.pth"
+    model_weights="weights/groundingdino_swint_ogc.pth"
+    # model_weights="weights/model_0_100.pth"
     # img_path = "/home/abeer/roboflow/train/ministrey_zone_2_Flight_01_01941_JPG.rf.f6dd851625ce27434b3ae9087aed4767.jpg"
     prompt = "bus . car . truck . pickup-truck . van"
     # loop over all images in a directory

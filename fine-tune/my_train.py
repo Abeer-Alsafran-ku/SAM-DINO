@@ -124,9 +124,9 @@ def read_my_dt(json_path):
         elif  data['annotations'][i]['category_id'] == 2:
             cap = 'car'
         elif  data['annotations'][i]['category_id'] == 3:
-            cap = 'truck'
-        elif  data['annotations'][i]['category_id'] == 4:
             cap = 'pickup-truck'
+        elif  data['annotations'][i]['category_id'] == 4:
+            cap = 'truck'
         elif  data['annotations'][i]['category_id'] == 5:
             cap = 'van'
         else:
